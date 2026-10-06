@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* Torix Lone Star tokens (Texas) — Deep #7A1F2B, Primary #A52834, Bright #C8313F, Navy #142A4C */
+
+:root {
+  --color-bg: #f7f5f2;
+  --color-text: #1b1c22;
+  --color-accent: #a52834;
+  --color-accent-2: #142a4c;
+  --color-divider: color-mix(in srgb, #1b1c22 10%, transparent);
+
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f1efea;
+  --color-neutral-300: #e2ded5;
+  --color-neutral-400: #c3bcae;
+  --color-neutral-500: #9c9486;
+  --color-neutral-600: #786f62;
+  --color-neutral-700: #564f46;
+  --color-neutral-800: #332f2a;
+  --color-neutral-900: #1b1c22;
+
+  --color-accent-100: #fbe9ea;
+  --color-accent-200: #f3c6c9;
+  --color-accent-300: #e4959b;
+  --color-accent-400: #c8313f;
+  --color-accent-500: #b52c38;
+  --color-accent-600: #a52834;
+  --color-accent-700: #7a1f2b;
+  --color-accent-800: #5e1721;
+  --color-accent-900: #431019;
+
+  --color-section: #142a4c;
+  --color-section-glow: #1d3b6b;
+  --color-section-ghost: #2d568f;
+
+  --band-paper: #ffffff;
+  --band-tint: #f3ece7;
+  --band-deep: #142a4c;
+  --band-deep-2: #0c1b33;
+  --band-deep-text: #f7f5f2;
+  --band-deep-muted: rgba(247, 245, 242, 0.72);
+
+  --font-heading: var(--font-oswald), var(--font-barlow), system-ui, sans-serif;
+  --font-heading-weight: 600;
+  --font-body: var(--font-barlow), system-ui, sans-serif;
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  --shadow-sm: 0 0 0 1px #e9e4dc, 0 1px 2px rgba(27, 28, 34, 0.06);
+  --shadow-md: 0 0 0 1px #ded7cb, 0 8px 22px rgba(27, 28, 34, 0.12);
+  --shadow-lg: 0 0 0 1px #d2c9ba, 0 16px 40px rgba(27, 28, 34, 0.16);
+  --shadow-accent: 0 8px 24px rgba(165, 40, 52, 0.3);
+  --shadow-accent-lg: 0 14px 36px rgba(165, 40, 52, 0.36);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 160ms;
+  --duration-med: 220ms;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-text: var(--color-text);
+  --color-accent: var(--color-accent);
+  --color-divider: var(--color-divider);
+  --color-neutral-100: var(--color-neutral-100);
+  --color-neutral-200: var(--color-neutral-200);
+  --color-neutral-300: var(--color-neutral-300);
+  --color-neutral-400: var(--color-neutral-400);
+  --color-neutral-500: var(--color-neutral-500);
+  --color-neutral-600: var(--color-neutral-600);
+  --color-neutral-700: var(--color-neutral-700);
+  --color-neutral-800: var(--color-neutral-800);
+  --color-neutral-900: var(--color-neutral-900);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+  --color-section: var(--color-section);
+  --color-band-paper: var(--band-paper);
+  --color-band-tint: var(--band-tint);
+  --color-band-deep: var(--band-deep);
+  --color-band-deep-2: var(--band-deep-2);
+  --color-band-deep-text: var(--band-deep-text);
+  --color-band-deep-muted: var(--band-deep-muted);
+  --font-sans: var(--font-body);
+  --font-heading: var(--font-heading);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+}
+
+@layer base {
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-heading-weight);
+    color: var(--color-text);
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    line-height: 1.12;
+    text-wrap: pretty;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-accent-200);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .card-lift {
+    transition:
+      transform var(--duration-med) var(--ease-out),
+      box-shadow var(--duration-med) var(--ease-out),
+      border-color var(--duration-med) var(--ease-out),
+      background-color var(--duration-med) var(--ease-out);
+  }
+
+  .card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-lift-deep:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in srgb, #ffffff 22%, transparent);
+    background-color: color-mix(in srgb, #ffffff 8%, transparent);
+  }
+
+  .card-lift-light:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent-300);
+  }
+}
+
+@keyframes faqIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
