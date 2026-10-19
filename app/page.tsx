@@ -2,15 +2,21 @@ import type { Metadata } from "next";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Footer } from "@/components/Footer";
-import { Hero, HeroBrandVisual } from "@/components/Hero";
+import { Hero } from "@/components/Hero";
+import { HeroLeadForm } from "@/components/HeroLeadForm";
 import { JsonLd } from "@/components/JsonLd";
 import { Navbar } from "@/components/Navbar";
 import { ServicesOverview } from "@/components/ServicesOverview";
 import { SplitOfferings } from "@/components/SplitOfferings";
 import { TrustBar } from "@/components/TrustBar";
+import { credentialingContent } from "@/content/credentialing";
 import { homeContent } from "@/content/home";
 import { faqPageSchema } from "@/lib/seo-schema";
 import { buildPageMetadata, siteName } from "@/lib/site";
+
+const specialtyOptions = credentialingContent.specialties.items.map(
+  (item) => item.title,
+);
 
 const homeAbsoluteTitle = `${siteName} | ${homeContent.meta.title}`;
 const homeMeta = buildPageMetadata({
@@ -51,7 +57,7 @@ export default function HomePage() {
           secondaryCta={c.hero.secondaryCta}
           consultationNote={c.hero.consultationNote}
           brandLayout
-          visual={<HeroBrandVisual />}
+          visual={<HeroLeadForm specialtyOptions={specialtyOptions} />}
         />
         <TrustBar items={c.trust} variant="brand" />
         <SplitOfferings
