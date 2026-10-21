@@ -1,189 +1,183 @@
 import type { BenefitItem } from "@/components/BenefitCards";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { IconName } from "@/components/icons";
+import { services, siteName } from "@/lib/site";
 
-/** About Us page copy from provided company brief. */
+/** About Us — who we are and how we work, limited to commitments the site already makes. */
 export const aboutContent = {
   meta: {
-    title: "About Us",
+    title: "About Our Medical Billing Team",
     description:
-      "Torix Solutions helps healthcare organizations simplify operations through medical billing services, in-house healthcare technology, and compliance-focused solutions that work together.",
+      "Medical Billers is a US-based medical billing team serving Texas practices: claims, coding, AR follow-up and credentialing, with one named representative.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "About Us" },
     ],
-    eyebrow: "Who we are",
-    headline: "Services and technology that work together.",
+    eyebrow: "About us",
+    headline: "About Medical Billers, a medical billing team for Texas practices.",
     subheadline:
-      "At Torix Solutions, we help healthcare organizations simplify operations through reliable medical billing services, healthcare technology, and compliance-focused solutions. By combining industry expertise with in-house software development, we deliver connected solutions that improve efficiency, reduce administrative burdens, and support better financial outcomes.",
+      "We do one thing: medical billing. Our US-based team handles claims, coding, AR follow-up and credentialing for Texas practices, so providers can focus on patients instead of payers.",
     distinction:
-      "Our goal is to become a trusted partner for healthcare providers by delivering services and technology that work together, not separately.",
-    primaryCta: { label: "Book a Consultation", href: "/contact" },
+      "Every practice we work with gets a named account representative, a signed BAA before day one, and the scope and price in writing before work starts.",
+    primaryCta: { label: "Book a Free Billing Review", href: "/contact" },
     secondaryCta: {
       label: "Explore Services",
-      href: "/services/medical-billing",
+      href: services.medicalBilling.href,
     },
     image: {
       src: "/brand/heroes/about.jpg",
-      alt: "Healthcare professional representing the Torix Solutions partnership approach",
+      alt: "Medical billing specialist ready to help a practice with its claims",
     },
   },
   story: {
-    heading: "Our story",
+    heading: "What we do",
     paragraphs: [
-      "Every healthcare practice faces increasing administrative complexity, from billing and compliance to managing multiple software systems. We recognized the need for a better approach: one that combines healthcare expertise with modern technology.",
-      "Torix Solutions was founded to help healthcare providers streamline their operations through dependable revenue cycle services and innovative healthcare software. Rather than offering disconnected solutions, we focus on creating a unified experience that supports practices at every stage of their growth.",
-      "As healthcare continues to evolve, our commitment remains the same: delivering practical solutions that allow providers to spend less time on administrative work and more time caring for patients.",
+      "Most practices didn't open to spend their days on hold with insurance companies. Yet billing decides whether the work they've already done gets paid: a missed eligibility check, a wrong code or an expired enrollment can hold up payment for months.",
+      `${siteName} takes that work off your plate. We verify coverage, code visits, submit clean claims to Medicare, Texas Medicaid and commercial payers, post payments, chase denials and keep your provider enrollments current.`,
+      "We keep it simple and honest: clear scope, clear pricing, regular reporting, and a person you can call who knows your practice.",
     ],
   },
   missionVision: {
     heading: "Mission & vision",
-    subheading: "What we work toward with every engagement.",
+    subheading: "What we work toward with every practice.",
     items: [
       {
         icon: "activity" as IconName,
         title: "Our mission",
         description:
-          "To empower healthcare organizations with innovative technology and professional operational services that simplify workflows, strengthen compliance, and improve financial performance.",
+          "To get practices paid fully and on time for the care they provide, with billing that is accurate, transparent and easy to understand.",
       },
       {
         icon: "layers" as IconName,
         title: "Our vision",
         description:
-          "To become a trusted global healthcare technology partner, helping medical practices achieve greater efficiency through connected software and expert healthcare solutions.",
+          "To be the billing partner Texas practices recommend to each other, because we answer the phone and our numbers add up.",
       },
     ] satisfies BenefitItem[],
   },
-  whyTech: {
-    heading: "Why healthcare & technology",
+  whatWeDo: {
+    heading: "Our medical billing services",
     subheading:
-      "Healthcare is no longer powered by services alone. Success depends on the seamless integration of technology, compliance, and operational excellence. At Torix Solutions, we combine healthcare expertise with software development to create solutions that support modern medical practices.",
+      "Use one service or several. They are designed to work together, and the same representative coordinates all of them.",
     footerNote:
-      "By developing our own technology while delivering healthcare services, we understand both the operational and technical challenges providers face every day.",
+      "Our Medical Billing Software is free for billing clients, and optional. We can work inside the system you already have.",
     items: [
       {
         icon: "fileText" as IconName,
-        title: "Medical Billing",
-        description: "Claim operations scoped to submission, posting and denial follow-up.",
-        href: "/services/medical-billing",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "clipboard" as IconName,
-        title: "Medical Coding",
-        description: "ICD-10 and CPT assignment with documentation support.",
-        href: "/services/medical-coding",
+        title: services.medicalBilling.label,
+        description: "Eligibility, claims, payment posting and patient balances.",
+        href: services.medicalBilling.href,
         ctaLabel: "Learn more →",
       },
       {
         icon: "activity" as IconName,
-        title: "Revenue Cycle Management",
-        description: "Full-cycle cash path from registration through collections.",
-        href: "/services/revenue-cycle-management",
+        title: services.rcm.label,
+        description: "The whole cycle, from registration to collections, run as one process.",
+        href: services.rcm.href,
+        ctaLabel: "Learn more →",
+      },
+      {
+        icon: "clipboard" as IconName,
+        title: services.medicalCoding.label,
+        description: "ICD-10 and CPT codes assigned from your documentation.",
+        href: services.medicalCoding.href,
+        ctaLabel: "Learn more →",
+      },
+      {
+        icon: "clock" as IconName,
+        title: services.arFollowUp.label,
+        description: "Unpaid and denied claims worked until they're resolved.",
+        href: services.arFollowUp.href,
         ctaLabel: "Learn more →",
       },
       {
         icon: "building" as IconName,
-        title: "Credentialing and Contract",
-        description: "Enrollment, CAQH and recredentialing so providers can bill.",
-        href: "/services/credentialing",
+        title: services.credentialing.label,
+        description: "Enrollment, CAQH and renewals so every provider can bill.",
+        href: services.credentialing.href,
         ctaLabel: "Learn more →",
       },
       {
         icon: "check" as IconName,
-        title: "Medical Billing Audit",
-        description: "Independent documentation, coding and compliance review.",
-        href: "/services/medical-audit",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "shield" as IconName,
-        title: "HIPAA-Focused Solutions",
-        description: "Access control, encryption and documented compliance practices.",
-        href: "/solutions/hipaa-compliant-software",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "code" as IconName,
-        title: "Healthcare Software Development",
-        description: "Platform and billing software built and maintained in house.",
-        href: "/solutions/healthcare-platform",
+        title: services.medicalAudit.label,
+        description: "A review of your billing with a ranked list of fixes.",
+        href: services.medicalAudit.href,
         ctaLabel: "Learn more →",
       },
     ] satisfies FeatureItem[],
   },
   values: {
     heading: "Our values",
-    subheading: "How we show up for practices and for each other.",
+    subheading: "How we work with practices and with each other.",
     items: [
       {
         icon: "clipboard" as IconName,
         title: "Transparency",
         description:
-          "We believe strong partnerships begin with honest communication, clear expectations, and complete visibility throughout every project.",
+          "Scope and pricing in writing before we start, and reports that show what was billed, paid and still outstanding.",
       },
       {
         icon: "check" as IconName,
-        title: "Accountability",
+        title: "Accuracy",
         description:
-          "We take ownership of our work and remain committed to delivering dependable solutions that our clients can trust.",
+          "Every claim is scrubbed before it is sent, because getting it right the first time is cheaper than fixing a denial.",
       },
       {
-        icon: "activity" as IconName,
-        title: "Innovation",
+        icon: "shield" as IconName,
+        title: "Privacy",
         description:
-          "We continuously improve our services and technology to help healthcare organizations operate more efficiently in an ever-changing industry.",
+          "We sign a BAA before day one and treat every patient record as if it were our own.",
       },
       {
         icon: "handshake" as IconName,
-        title: "Partnership",
+        title: "Accountability",
         description:
-          "We work as an extension of our clients' teams, building long-term relationships focused on shared success rather than short-term transactions.",
+          "A named representative owns your account, so there is always one person responsible for the result.",
       },
     ] satisfies BenefitItem[],
   },
   whyUs: {
-    heading: "Why choose Torix Solutions",
-    subheading: "What practices get when services and technology stay under one partner.",
+    heading: `Why practices choose ${siteName}`,
+    subheading: "Commitments we make to every practice, in writing.",
     items: [
       {
-        icon: "layers" as IconName,
-        title: "Comprehensive healthcare solutions",
-        description: "Billing, coding, RCM, credentialing, audits and software under one trusted partner.",
-      },
-      {
-        icon: "code" as IconName,
-        title: "In-house healthcare technology",
-        description: "Software developed and maintained by Torix, not a white-labelled product.",
-      },
-      {
         icon: "shield" as IconName,
-        title: "HIPAA-conscious operations",
-        description: "Compliance-focused practices across services and technology engagements.",
+        title: "Signed BAA before day one",
+        description: "No patient data is shared until the Business Associate Agreement is signed.",
       },
       {
-        icon: "activity" as IconName,
-        title: "Scalable for practices of all sizes",
-        description: "Engagements scoped to independent practices and growing organizations alike.",
+        icon: "check" as IconName,
+        title: "Every claim scrubbed",
+        description: "Each claim is checked for errors before it reaches the payer.",
       },
       {
         icon: "handshake" as IconName,
-        title: "Dedicated client support",
-        description: "Long-term partnerships with named contacts rather than ticket-only support.",
+        title: "Named account representative",
+        description: "One person who knows your practice, instead of a ticket queue.",
+      },
+      {
+        icon: "headphones" as IconName,
+        title: "US-based billing team",
+        description: "Billing done by a team based in the United States.",
+      },
+      {
+        icon: "clipboard" as IconName,
+        title: "Scope and price in writing",
+        description: "You know exactly what is included and what it costs before we start.",
       },
       {
         icon: "monitor" as IconName,
-        title: "Modern technology, healthcare expertise",
-        description: "Operational know-how backed by software built for how practices actually work.",
+        title: "Software included, never required",
+        description: "Free billing software if you want it; your current system if you don't.",
       },
     ] satisfies FeatureItem[],
   },
   finalCta: {
-    heading: "Let's build better healthcare operations together.",
+    heading: "Let's talk about your billing.",
     subheading:
-      "Whether you're looking to improve your revenue cycle, modernize your healthcare technology, or strengthen your operational workflows, Torix Solutions is here to help.",
-    cta: { label: "Book a Consultation", href: "/contact" },
+      "Tell us about your practice, your payers and what's frustrating you about billing today. We'll tell you honestly whether we can help.",
+    cta: { label: "Book a Free Billing Review", href: "/contact" },
   },
 };

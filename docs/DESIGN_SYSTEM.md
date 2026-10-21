@@ -1,4 +1,6 @@
-# Torix Design System — Torix Blue
+# Design System
+
+> Inherited from the Torix template. The live brand is **Medical Billers**; current color tokens are in [`app/globals.css`](../app/globals.css) and the logo mark in [`components/LogoMark.tsx`](../components/LogoMark.tsx).
 
 Global visual reference for every page (Home, Services, Solutions, About, Careers, Contact, Blog).
 

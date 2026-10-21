@@ -1,6 +1,8 @@
 # Homepage Visual Design Plan
 
-Visual treatment for the Torix homepage. Content structure is finalized and approved — this document covers **how it should look**, not what it contains. Do not change, reorder, add, or remove sections when implementing.
+> Historical plan from the Torix template. The homepage content has since been rewritten for Medical Billers (see [`content/home.ts`](../content/home.ts)); claims such as "In-Person Support" and "Software Builders" are no longer used.
+
+Visual treatment for the homepage. Content structure is finalized and approved — this document covers **how it should look**, not what it contains. Do not change, reorder, add, or remove sections when implementing.
 
 **Locked direction:** [docs/DESIGN_SYSTEM.md](DESIGN_SYSTEM.md) (Nocturne Light from [`referenceUI/Torix Site - Nocturne Light (standalone).html`](../referenceUI/Torix%20Site%20-%20Nocturne%20Light%20(standalone).html)). Do not invent a second palette or type stack.
 

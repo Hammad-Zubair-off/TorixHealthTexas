@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { buildPageMetadata } from "@/lib/site";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo-schema";
+import { buildPageMetadata, services } from "@/lib/site";
+import { faqPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo-schema";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Footer } from "@/components/Footer";
@@ -10,10 +10,12 @@ import { IconFeatureGrid } from "@/components/IconFeatureGrid";
 import { Navbar } from "@/components/Navbar";
 import { medicalBillingContent } from "@/content/medical-billing";
 
+const path = services.medicalBilling.href;
+
 export const metadata: Metadata = buildPageMetadata({
   title: medicalBillingContent.meta.title,
   description: medicalBillingContent.meta.description,
-  path: "/services/medical-billing",
+  path,
 });
 
 export default function MedicalBillingPage() {
@@ -21,7 +23,13 @@ export default function MedicalBillingPage() {
 
   return (
     <>
-      <JsonLd data={[faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/services/medical-billing")]} />
+      <JsonLd
+        data={[
+          serviceSchema({ name: services.medicalBilling.label, description: c.meta.description, path }),
+          faqPageSchema(c.faqs.items),
+          breadcrumbSchema(c.hero.breadcrumb, path),
+        ]}
+      />
       <Navbar />
       <main>
         <Hero
@@ -39,6 +47,14 @@ export default function MedicalBillingPage() {
           footerNote={c.howItWorks.footerNote}
           items={c.howItWorks.items}
           band="paper"
+        />
+        <IconFeatureGrid
+          heading={c.texasPayers.heading}
+          subheading={c.texasPayers.subheading}
+          items={c.texasPayers.items}
+          variant="deep"
+          band="deep"
+          minCardWidth={240}
         />
         <FAQAccordion heading={c.faqs.heading} items={c.faqs.items} />
         <CTABanner

@@ -2,204 +2,163 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { OverviewCard } from "@/components/ServicesOverview";
 import type { TrustItem } from "@/components/TrustBar";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
-/** Homepage copy from referenceUI Nocturne Light, with em-dash phrasing cleaned up. */
+/** Homepage — medical billing for Texas practices. Every claim here is a commitment the site describes elsewhere. */
 export const homeContent = {
   meta: {
-    title: "Medical Billing & Healthcare Technology",
+    title: "Medical Billing Company in Texas",
     description:
-      "Underpayments and slow follow-up are quietly draining your collections. Torix Solutions fixes that. Our team of billing experts handles your entire revenue cycle — accurate medical coding, credentialing with the insurances you actually bill, timely claims submission, and relentless follow-up on every unpaid claim. The result: faster reimbursements, fewer denials, and more of what you've earned actually landing in your account.",
+      "Medical billing services for Texas practices: claims, coding, AR follow-up and credentialing, with a signed BAA and one named account rep.",
   },
   hero: {
-    eyebrow: "US-based billing operations & healthcare technology",
-    headline: "A billing partner you can count on.",
-    highlightWord: "count on.",
+    eyebrow: "US-based billing team · Serving Texas practices",
+    headline: "Medical billing services for Texas practices.",
+    highlightWord: "Texas practices.",
     subheadline:
-      "Underpayments and slow follow-up are quietly draining your collections. Torix Solutions fixes that. Our team of billing experts handles your entire revenue cycle — accurate medical coding, credentialing with the insurances you actually bill, timely claims submission, and relentless follow-up on every unpaid claim. The result: faster reimbursements, fewer denials, and more of what you've earned actually landing in your account.",
-    primaryCta: { label: "Book a Consultation", href: "/contact" },
+      "We handle your insurance billing from start to finish: checking patient coverage, coding visits, sending clean claims to Medicare, Texas Medicaid and commercial payers, and following up on every claim that goes unpaid. You get paid for the work you already did, and your staff get their time back.",
+    primaryCta: { label: "Book a Free Billing Review", href: "/contact" },
     secondaryCta: {
       label: "See how billing works",
-      href: "/services/medical-billing",
+      href: services.medicalBilling.href,
     },
     consultationNote:
-      "A consultation is a conversation about your current denials and A/R. Not a sales call.",
+      "The review is a conversation about your current denials and unpaid claims. Not a sales call.",
   },
   trust: [
     {
-      icon: "users" as IconName,
-      label: "100+ Satisfied Providers",
-      description: "Across the USA",
-    },
-    {
       icon: "shield" as IconName,
-      label: "99% Clean Claims Rate",
-      description: "Higher first-pass success",
+      label: "Signed BAA before day one",
+      description: "Before any patient data is shared",
     },
     {
-      icon: "clock" as IconName,
-      label: "25+ Specialties Supported",
-      description: "Broad experience",
+      icon: "check" as IconName,
+      label: "Every claim scrubbed",
+      description: "Checked for errors before it is sent",
+    },
+    {
+      icon: "handshake" as IconName,
+      label: "Named account representative",
+      description: "One person who knows your practice",
     },
     {
       icon: "headphones" as IconName,
-      label: "US-Based Support Team",
-      description: "Real people. Real support.",
+      label: "US-based billing team",
+      description: "Real people you can call",
     },
   ] satisfies TrustItem[],
   split: {
-    heading: "Two things we do, kept separate on purpose.",
+    heading: "Billing services, with the software included.",
     subheading:
-      "Operational services and technology products are different commitments with different buyers. We don't blur them.",
+      "Our team does the billing work for you. If you want software to see where every claim stands, it comes free with the service.",
     servicesCard: {
-      kicker: "Healthcare Services",
-      title: "We run the billing operation",
+      kicker: "What we do",
+      title: "We run your billing",
       description:
-        "Claims, coding, credentialing, audits and full revenue cycle management, performed by our team on your behalf.",
-      cta: { label: "Explore Services", href: "/services/medical-billing" },
+        "Eligibility checks, coding, claim submission, payment posting, denial follow-up and credentialing, done by our team on your behalf.",
+      cta: { label: "Explore Services", href: services.medicalBilling.href },
     },
     solutionsCard: {
-      kicker: "Healthcare Technology",
-      title: "We build the software",
+      kicker: "Free with billing",
+      title: "Software at no extra cost",
       description:
-        "Telehealth, patient portal, EHR and EMR, practice management, and billing automation: one connected system rather than five vendors.",
-      cta: { label: "Explore Solutions", href: "/solutions/healthcare-platform" },
+        "Billing clients can use our Medical Billing Software free, or keep the system they already have. Either way the billing service is the same.",
+      cta: { label: "See the Software", href: services.billingSoftware.href },
     },
   },
   overview: {
-    servicesHeading: "Healthcare services",
+    servicesHeading: "Medical billing services",
     servicesNote:
-      "Services are work we do on your behalf. Every engagement is assigned a named representative before it starts.",
-    solutionsHeading: "Software we wrote, not software we resell.",
+      "Use one service or all of them. Every practice gets a named account representative before work starts.",
+    solutionsHeading: "Software that comes free with billing.",
     services: [
       {
         icon: "fileText",
-        title: "Medical Billing",
+        title: services.medicalBilling.label,
         description:
-          "Full-cycle billing from scheduling to final insurance and patient payment — eligibility, claims, posting, and patient balances handled end to end.",
-        href: "/services/medical-billing",
-        ctaLabel: "Medical Billing",
+          "Claims handled from eligibility check to final payment: coding, submission, payment posting and patient balances.",
+        href: services.medicalBilling.href,
+        ctaLabel: "Learn more",
       },
       {
         icon: "activity",
-        title: "Revenue Cycle Management",
+        title: services.rcm.label,
         description:
-          "Everything working together from patient scheduling to final payment — so nothing falls through the cracks between coding, claims, credentialing, and collections.",
-        href: "/services/revenue-cycle-management",
-        ctaLabel: "Revenue Cycle Management",
+          "Your whole revenue cycle run as one process, from patient registration and prior authorization to collections and reporting.",
+        href: services.rcm.href,
+        ctaLabel: "Learn more",
       },
       {
         icon: "clipboard",
-        title: "Medical Coding",
+        title: services.medicalCoding.label,
         description:
-          "ICD-10 and CPT assignment at the point of entry, with documentation queries raised when the note doesn't support the code.",
-        href: "/services/medical-coding",
-        ctaLabel: "Medical Coding",
+          "ICD-10 and CPT codes assigned from your notes, with questions raised when the note doesn't support the code.",
+        href: services.medicalCoding.href,
+        ctaLabel: "Learn more",
       },
       {
-        icon: "check",
-        title: "Medical Billing Audit",
+        icon: "clock",
+        title: services.arFollowUp.label,
         description:
-          "Revenue cycle KPIs, denial patterns, and provider productivity — analyzed against benchmarks with corrective actions you can act on.",
-        href: "/services/medical-audit",
-        ctaLabel: "Medical Billing Audit",
-      },
-      {
-        icon: "activity",
-        title: "Accounts Receivable Operations",
-        description:
-          "AR follow-up, denial resolution, appeals and payment recovery — worked inside your system, with a named representative you can call.",
-        href: "/services/ar-follow-up",
-        ctaLabel: "Accounts Receivable Operations",
+          "Unpaid and denied claims worked by age and dollar amount, with appeals filed before deadlines pass.",
+        href: services.arFollowUp.href,
+        ctaLabel: "Learn more",
       },
       {
         icon: "building",
-        title: "Credentialing and Contract",
+        title: services.credentialing.label,
         description:
-          "Get enrolled with the insurances that matter, keep CAQH current, and renew credentials before you lose network status.",
-        href: "/services/credentialing",
-        ctaLabel: "Credentialing and Contract",
+          "Enrollment with Medicare, Texas Medicaid and commercial payers, CAQH kept current, and renewals tracked before they lapse.",
+        href: services.credentialing.href,
+        ctaLabel: "Learn more",
+      },
+      {
+        icon: "check",
+        title: services.medicalAudit.label,
+        description:
+          "A review of your claims, coding and denials that shows where money is being lost and what to fix first.",
+        href: services.medicalAudit.href,
+        ctaLabel: "Learn more",
       },
     ] satisfies OverviewCard[],
     solutions: [
       {
         icon: "monitor",
-        title: "Medical Billing Software",
+        title: services.billingSoftware.label,
         description:
-          "Bundled at no cost with the Medical Billing service. Less manual entry, shorter billing cycles, and reporting you can actually read. Includes a free EHR and free practice management.",
-        href: "/solutions/medical-billing-software",
-        tag: "Free",
-        ctaLabel: "Request a Demo",
-      },
-      {
-        icon: "layers",
-        title: "Healthcare Platform",
-        description:
-          "EHR, EMR, practice management, specialty and mobile EHR, patient portal, telehealth, chronic care management and public sector deployments, connected under one login.",
-        href: "/solutions/healthcare-platform",
-        tag: "Flagship",
-        ctaLabel: "Request a Platform Demo",
+          "Free with the billing service. See what was submitted, what was paid and what is still outstanding, without asking for a report.",
+        href: services.billingSoftware.href,
+        tag: "Free with billing",
+        ctaLabel: "See the Software",
       },
       {
         icon: "lock",
-        title: "HIPAA-Compliant Software",
+        title: services.hipaaSoftware.label,
         description:
-          "Role-based access control, audit logging, encryption in transit and at rest, and a signed Business Associate Agreement. Documented in detail rather than asserted in a badge.",
-        href: "/solutions/hipaa-compliant-software",
+          "How patient data is protected: role-based access, audit logging, encryption, and a signed Business Associate Agreement.",
+        href: services.hipaaSoftware.href,
         tag: "Compliance",
         ctaLabel: "Read the detail",
       },
     ] satisfies OverviewCard[],
   },
   faqs: {
-    heading: "Questions we get asked first",
+    heading: "Questions practices ask first",
     items: [
-      {
-        question:
-          "What's the difference between Medical Billing and Revenue Cycle Management?",
-        answer:
-          "Medical Billing is the claim: coded, scrubbed, submitted, posted, and reworked when it's denied. Revenue Cycle Management starts earlier and ends later: eligibility at registration, charge capture, the claim, then patient statements and collections.",
-      },
-      {
-        question: "Will switching billing partners interrupt our cash flow?",
-        answer:
-          "We run a parallel period with your current process. Your existing submissions keep going while we take over queue by queue, and legacy A/R is worked rather than abandoned.",
-      },
-      {
-        question: "Do you sign a Business Associate Agreement?",
-        answer:
-          "Yes, and before any protected health information is exchanged. The HIPAA Compliance page sets out how PHI is stored, logged and transmitted.",
-      },
-      {
-        question: "Do we have to use your software?",
-        answer:
-          "No. The billing service works with the system you already run. The free Medical Billing Software is offered alongside it, and the Healthcare Platform is a separate decision you can make later or never.",
-      },
-    ] satisfies FAQItem[],
-  },
-  virtualAssistantFaqs: {
-    heading: "Virtual Assistant FAQs",
-    items: [
-      {
-        question: "What tasks can Torix Solutions Virtual Assistants handle?",
-        answer:
-          "Our virtual assistants can support administrative and healthcare-related workflows such as scheduling, patient communication, data entry, insurance verification, documentation support, and other routine administrative tasks.",
-      },
-      {
-        question: "Can I hire a Virtual Assistant specifically for my medical practice?",
-        answer:
-          "Yes. Virtual Assistant support can be tailored to your practice's workflow, specialty, administrative needs, and day-to-day workload.",
-      },
-      {
-        question: "How can a Virtual Assistant help reduce my staff's workload?",
-        answer:
-          "A dedicated Virtual Assistant can handle time-consuming administrative tasks, allowing your in-house team to focus more on patients, providers, and higher-priority responsibilities.",
-      },
+      sharedFaqs.pricing,
+      sharedFaqs.switching,
+      sharedFaqs.texasMedicaid,
+      sharedFaqs.medicare,
+      sharedFaqs.billingVsRcm,
+      sharedFaqs.baa,
+      sharedFaqs.software,
     ] satisfies FAQItem[],
   },
   finalCta: {
-    heading: "Start with a conversation about your current billing.",
+    heading: "Start with a free review of your billing.",
     subheading:
-      "Bring a recent remittance and your A/R ageing. We'll tell you what we'd change, whether or not you engage us.",
-    cta: { label: "Book a Consultation", href: "/contact" },
+      "Bring a recent remittance and your unpaid claims report. We'll tell you what we would change, whether or not you hire us.",
+    cta: { label: "Book a Free Billing Review", href: "/contact" },
   },
 };

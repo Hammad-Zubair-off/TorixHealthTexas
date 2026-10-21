@@ -3,13 +3,14 @@ import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { JobOpening } from "@/components/JobOpenings";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { services, siteName } from "@/lib/site";
 
-/** Careers page copy from provided hiring brief. */
+/** Careers — billing roles and how we work. */
 export const careersContent = {
   meta: {
-    title: "Careers",
+    title: "Medical Billing & Coding Careers",
     description:
-      "Join Torix Solutions and help transform healthcare through technology, medical billing expertise, and operational excellence. Explore open positions and our hiring process.",
+      "Medical billing and coding careers at Medical Billers: work on claims, coding, AR follow-up and credentialing for Texas practices on a US-based team.",
   },
   hero: {
     breadcrumb: [
@@ -17,211 +18,99 @@ export const careersContent = {
       { label: "Careers" },
     ],
     eyebrow: "Careers",
-    headline: "Build the future of healthcare with Torix Solutions.",
+    headline: "Medical billing and coding careers.",
     subheadline:
-      "Join a team that's transforming healthcare through technology, innovation, and operational excellence. We're passionate about building solutions that simplify healthcare operations, improve revenue cycles, and empower providers to focus on patient care.",
+      "Our team gets Texas practices paid for the care they provide. If you're good with claims, codes and payers, and you care about getting the details right, we'd like to hear from you.",
     distinction:
-      "Whether you're an experienced professional or just starting your career, we believe great people create great solutions.",
-    primaryCta: { label: "Explore Open Positions", href: "#openings" },
+      "Experienced billers and coders, and people early in their billing career, are both welcome to apply.",
+    primaryCta: { label: "See the Roles", href: "#openings" },
     secondaryCta: { label: "Send Your Resume", href: "/contact" },
     image: {
       src: "/brand/heroes/careers.jpg",
-      alt: "Collaborative team working together in a modern workplace",
+      alt: "Medical billing team working together",
     },
   },
   whyJoin: {
-    heading: "Why join Torix Solutions?",
-    subheading:
-      "We're more than a workplace. We're a team that values collaboration, innovation, and continuous learning.",
+    heading: `Why work at ${siteName}?`,
+    subheading: "Billing work that matters to the practices we serve.",
     items: [
       {
         icon: "activity" as IconName,
-        title: "Meaningful Impact",
+        title: "Work That Gets Practices Paid",
         description:
-          "Help healthcare providers improve their operations through technology and professional services that make a real difference.",
+          "Every claim you fix or appeal you win is money a practice earned and would otherwise lose.",
       },
       {
         icon: "layers" as IconName,
-        title: "Professional Growth",
+        title: "Grow Across the Revenue Cycle",
         description:
-          "Expand your skills by working on healthcare software, medical billing solutions, compliance initiatives, and innovative technology projects.",
+          "Build skills in coding, payment posting, AR follow-up, denials and credentialing, not just one queue.",
       },
       {
         icon: "users" as IconName,
-        title: "Collaborative Environment",
+        title: "A Team That Shares Knowledge",
         description:
-          "Work alongside talented professionals who believe in sharing knowledge, supporting one another, and achieving success together.",
+          "Payer rules change constantly. We share what we learn so nobody figures it out alone.",
       },
       {
-        icon: "code" as IconName,
-        title: "Innovation-Driven Culture",
+        icon: "shield" as IconName,
+        title: "Do It Properly",
         description:
-          "We're constantly exploring new technologies and better ways to solve healthcare challenges.",
+          "Clean claims, accurate codes and careful handling of patient data are the standard, not a nice-to-have.",
       },
     ] satisfies FeatureItem[],
   },
   whatWeDo: {
-    heading: "What we do",
-    subheading:
-      "Our team works across a wide range of healthcare solutions. Every role contributes to helping healthcare organizations operate more efficiently and deliver better patient experiences.",
+    heading: "What our team works on",
+    subheading: "Every role supports one or more of these services.",
     items: [
-      {
-        icon: "fileText" as IconName,
-        title: "Medical Billing",
-        href: "/services/medical-billing",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "activity" as IconName,
-        title: "Revenue Cycle Management",
-        href: "/services/revenue-cycle-management",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "clipboard" as IconName,
-        title: "Medical Coding",
-        href: "/services/medical-coding",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "building" as IconName,
-        title: "Credentialing and Contract",
-        href: "/services/credentialing",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "check" as IconName,
-        title: "Medical Billing Audit",
-        href: "/services/medical-audit",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "code" as IconName,
-        title: "Healthcare Software Development",
-        href: "/solutions/medical-billing-software",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "shield" as IconName,
-        title: "HIPAA-Focused Solutions",
-        href: "/solutions/hipaa-compliant-software",
-        ctaLabel: "Learn more →",
-      },
-      {
-        icon: "layers" as IconName,
-        title: "Healthcare Platform Development",
-        href: "/solutions/healthcare-platform",
-        ctaLabel: "Learn more →",
-      },
+      { icon: "fileText" as IconName, title: services.medicalBilling.label, href: services.medicalBilling.href, ctaLabel: "Learn more →" },
+      { icon: "activity" as IconName, title: services.rcm.label, href: services.rcm.href, ctaLabel: "Learn more →" },
+      { icon: "clipboard" as IconName, title: services.medicalCoding.label, href: services.medicalCoding.href, ctaLabel: "Learn more →" },
+      { icon: "clock" as IconName, title: services.arFollowUp.label, href: services.arFollowUp.href, ctaLabel: "Learn more →" },
+      { icon: "building" as IconName, title: services.credentialing.label, href: services.credentialing.href, ctaLabel: "Learn more →" },
+      { icon: "check" as IconName, title: services.medicalAudit.label, href: services.medicalAudit.href, ctaLabel: "Learn more →" },
     ] satisfies FeatureItem[],
   },
   life: {
-    heading: "Life at Torix Solutions",
+    heading: `Working at ${siteName}`,
     paragraphs: [
-      "We believe the best ideas come from people who are encouraged to grow, collaborate, and innovate.",
-      "We're committed to creating an environment where every team member can do their best work while continuing to develop personally and professionally.",
+      "Billing is detail work. We give people the time, training and support to do it properly, and we treat questions as part of the job rather than a sign of weakness.",
+      "Each practice has a named account representative, so you always know who owns an account and who to ask.",
     ],
   },
   culture: {
-    heading: "Our culture is built on",
+    heading: "How we work",
     items: [
-      {
-        icon: "users" as IconName,
-        title: "Collaboration",
-        description: "We share knowledge and succeed as a team.",
-      },
-      {
-        icon: "check" as IconName,
-        title: "Accountability",
-        description: "We own our work and follow through for clients and teammates.",
-      },
-      {
-        icon: "clipboard" as IconName,
-        title: "Continuous Learning",
-        description: "We keep growing skills as healthcare and technology change.",
-      },
-      {
-        icon: "activity" as IconName,
-        title: "Innovation",
-        description: "We look for better ways to solve real practice problems.",
-      },
-      {
-        icon: "handshake" as IconName,
-        title: "Respect",
-        description: "We treat colleagues, clients and patients' data with care.",
-      },
-      {
-        icon: "layers" as IconName,
-        title: "Professional Development",
-        description: "We invest in people who want to build lasting careers here.",
-      },
+      { icon: "check" as IconName, title: "Accuracy", description: "We get claims right the first time." },
+      { icon: "handshake" as IconName, title: "Ownership", description: "We follow through for practices and teammates." },
+      { icon: "clipboard" as IconName, title: "Continuous Learning", description: "We keep up with payer and coding changes." },
+      { icon: "shield" as IconName, title: "Privacy", description: "We handle patient data with care, every time." },
+      { icon: "users" as IconName, title: "Teamwork", description: "We share knowledge instead of hoarding it." },
+      { icon: "headphones" as IconName, title: "Clear Communication", description: "We tell practices what's happening, good or bad." },
     ] satisfies FeatureItem[],
   },
   benefits: {
-    heading: "Benefits",
-    subheading: "What we offer teammates who join Torix Solutions.",
+    heading: "What we offer",
+    subheading: `What teammates get at ${siteName}.`,
     items: [
-      {
-        icon: "check" as IconName,
-        title: "Competitive Compensation",
-        description: "Pay that reflects the skill and responsibility of the role.",
-      },
-      {
-        icon: "mapPin" as IconName,
-        title: "Flexible Working Environment",
-        description: "Ways of working that support focus and real life.",
-      },
-      {
-        icon: "clipboard" as IconName,
-        title: "Professional Development",
-        description: "Opportunities to deepen healthcare and technology skills.",
-      },
-      {
-        icon: "activity" as IconName,
-        title: "Career Growth",
-        description: "Paths to take on more scope as you grow with the team.",
-      },
-      {
-        icon: "users" as IconName,
-        title: "Collaborative Team Culture",
-        description: "A workplace built on shared goals, not siloed handoffs.",
-      },
-      {
-        icon: "monitor" as IconName,
-        title: "Modern Tools & Technology",
-        description: "The systems and stack you need to do high-quality work.",
-      },
-      {
-        icon: "handshake" as IconName,
-        title: "Performance Recognition",
-        description: "Credit for strong work that helps practices and teammates.",
-      },
-      {
-        icon: "layers" as IconName,
-        title: "Learning & Training Programs",
-        description: "Structured learning for role skills and compliance readiness.",
-      },
+      { icon: "check" as IconName, title: "Competitive Pay", description: "Pay that reflects the skill and responsibility of the role." },
+      { icon: "clipboard" as IconName, title: "Training", description: "Training on payer rules, coding updates and HIPAA." },
+      { icon: "activity" as IconName, title: "Career Growth", description: "Room to take on more as your skills grow." },
+      { icon: "users" as IconName, title: "Supportive Team", description: "Colleagues who answer questions and share what works." },
     ] satisfies BenefitItem[],
   },
   openings: {
-    heading: "Current openings",
-    subheading: "We're always looking for talented individuals to join our growing team.",
-    footerNote:
-      "Don't see a role that matches your skills? We'd still love to hear from you.",
+    heading: "Roles we hire for",
+    subheading:
+      "Openings change as we grow. Send your resume for any of these roles and we'll tell you what's currently open.",
+    footerNote: "Don't see your role? We'd still like to hear from you.",
     footerCta: { label: "Send Your Resume", href: "/contact" },
     items: [
       {
-        title: "Front-End Developer",
-        description:
-          "Build intuitive healthcare applications using modern web technologies.",
-        location: "United States",
-        employmentType: "Full-Time",
-        href: "/contact",
-      },
-      {
         title: "Medical Billing Specialist",
         description:
-          "Support healthcare providers through accurate billing and revenue cycle management.",
+          "Charge entry, claim submission, payment posting and patient balances for client practices.",
         location: "United States",
         employmentType: "Full-Time",
         href: "/contact",
@@ -229,99 +118,44 @@ export const careersContent = {
       {
         title: "Medical Coding Specialist",
         description:
-          "Ensure accurate coding while supporting compliance and reimbursement processes.",
+          "ICD-10 and CPT coding from provider documentation, with queries when the note doesn't support the code.",
         location: "United States",
         employmentType: "Full-Time",
         href: "/contact",
       },
       {
-        title: "UI/UX Designer",
+        title: "AR Follow-Up Specialist",
         description:
-          "Design intuitive digital experiences for healthcare professionals and patients.",
+          "Work unpaid and denied claims with payers by phone and portal, and prepare appeals.",
         location: "United States",
-        employmentType: "Full-Time",
+        employmentType: "Ask us",
         href: "/contact",
       },
       {
-        title: "Business Development Executive",
+        title: "Credentialing Specialist",
         description:
-          "Help grow our partnerships and expand our healthcare solutions across new markets.",
+          "Prepare and track provider enrollments with Medicare, Texas Medicaid and commercial payers, and keep CAQH current.",
         location: "United States",
-        employmentType: "Full-Time",
+        employmentType: "Ask us",
         href: "/contact",
       },
     ] satisfies JobOpening[],
   },
   hiring: {
     heading: "Our hiring process",
-    subheading: "A clear path from application to your first day on the team.",
+    subheading: "A clear path from application to your first day.",
     steps: [
-      {
-        title: "Submit Your Application",
-        description: "Send us your resume along with a brief introduction.",
-      },
-      {
-        title: "Initial Review",
-        description: "Our hiring team reviews your experience and qualifications.",
-      },
-      {
-        title: "Interview",
-        description:
-          "Meet with our team to discuss your skills, experience, and career goals.",
-      },
-      {
-        title: "Final Evaluation",
-        description:
-          "We'll assess technical and cultural fit before making a decision.",
-      },
-      {
-        title: "Welcome to Torix Solutions",
-        description:
-          "Begin your journey with onboarding, training, and support from our team.",
-      },
+      { title: "Apply", description: "Send your resume with a short note about your billing experience." },
+      { title: "Review", description: "We review your experience and get back to you." },
+      { title: "Interview", description: "Talk with our team about your skills and the role." },
+      { title: "Decision", description: "We make a decision and explain the next steps." },
+      { title: `Welcome to ${siteName}`, description: "Onboarding, HIPAA training and support from the team." },
     ] satisfies ProcessStep[],
   },
-  values: {
-    heading: "Our values",
-    subheading:
-      "These values guide everything we build, every solution we deliver, and every relationship we create.",
-    items: [
-      {
-        icon: "activity" as IconName,
-        title: "Innovation",
-        description: "We look for better ways to solve healthcare challenges.",
-      },
-      {
-        icon: "shield" as IconName,
-        title: "Integrity",
-        description: "We communicate honestly and handle work and data with care.",
-      },
-      {
-        icon: "users" as IconName,
-        title: "Collaboration",
-        description: "We succeed by working across disciplines, not in silos.",
-      },
-      {
-        icon: "check" as IconName,
-        title: "Accountability",
-        description: "We own outcomes for clients and for each other.",
-      },
-      {
-        icon: "handshake" as IconName,
-        title: "Customer Success",
-        description: "We measure ourselves by how well practices succeed with us.",
-      },
-      {
-        icon: "layers" as IconName,
-        title: "Continuous Improvement",
-        description: "We keep refining services, software and how we work.",
-      },
-    ] satisfies FeatureItem[],
-  },
   finalCta: {
-    heading: "Ready to join our team?",
+    heading: "Ready to join our billing team?",
     subheading:
-      "If you're passionate about healthcare, technology, and solving meaningful challenges, we'd love to hear from you. Whether you're experienced or just beginning, Torix Solutions offers opportunities to learn, grow, and make a lasting impact.",
-    cta: { label: "Apply Now", href: "/contact" },
+      "If you like solving claim problems and getting the details right, send us your resume.",
+    cta: { label: "Send Your Resume", href: "/contact" },
   },
 };

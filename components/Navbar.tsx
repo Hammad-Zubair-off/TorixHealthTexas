@@ -1,12 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/Button";
 import { Container } from "@/components/Container";
 import { Icon } from "@/components/icons";
+import { LogoMark } from "@/components/LogoMark";
 import { mainNav, type NavGroup, type NavLink } from "@/lib/nav";
 import { siteContact } from "@/lib/site-contact";
 import { cn } from "@/lib/utils";
@@ -107,28 +107,21 @@ function BrandLogo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="Torix Health"
+      aria-label="Medical Billers home"
       className={cn(
         "group mr-auto inline-flex items-center gap-3 no-underline",
         className,
       )}
     >
-      <Image
-        src="/brand/torix-logo-mark.png"
-        alt=""
-        width={365}
-        height={431}
-        className="h-[44px] w-auto shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] sm:h-[48px]"
-        priority
-      />
+      <LogoMark className="h-[44px] w-[44px] shrink-0 transition-transform duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03] sm:h-[48px] sm:w-[48px]" />
       <span className="flex min-w-[7.5rem] flex-col items-center justify-center text-center leading-none">
         <span className="font-[family-name:var(--font-heading)] text-[18px] font-bold tracking-[0.12em] text-accent-700 sm:text-[19px]">
-          TORIX
+          MEDICAL
         </span>
         <span className="mt-1.5 flex w-full items-center gap-2">
           <span aria-hidden="true" className="h-px flex-1 bg-accent-400/70" />
           <span className="font-[family-name:var(--font-heading)] text-[9px] font-semibold uppercase tracking-[0.28em] text-accent sm:text-[10px]">
-            Health
+            Billers
           </span>
           <span aria-hidden="true" className="h-px flex-1 bg-accent-400/70" />
         </span>

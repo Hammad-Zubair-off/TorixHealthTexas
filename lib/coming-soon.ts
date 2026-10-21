@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { buildPageMetadata } from "@/lib/site";
+import { buildPageMetadata, siteName } from "@/lib/site";
 
 /** Shared metadata helper for unfinished route stubs (noindex). */
 export function comingSoonMetadata(
@@ -8,7 +8,7 @@ export function comingSoonMetadata(
 ): Metadata {
   return buildPageMetadata({
     title: feature,
-    description: `${feature} is coming soon from Torix Solutions.`,
+    description: `${feature} is coming soon from ${siteName}.`,
     path,
     noIndex: true,
   });

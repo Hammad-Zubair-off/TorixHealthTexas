@@ -30,7 +30,7 @@ const oswald = Oswald({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteName} | Medical Billing & Healthcare Technology`,
+    default: `Medical Billing Company in Texas | ${siteName}`,
     template: `%s | ${siteName}`,
   },
   description: defaultDescription,
@@ -40,20 +40,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName,
-    title: `${siteName} | Medical Billing & Healthcare Technology`,
+    title: `Medical Billing Company in Texas | ${siteName}`,
     description: defaultDescription,
     images: [
       {
         url: ogImagePath,
-        width: 365,
-        height: 431,
+        width: 1200,
+        height: 630,
         alt: `${siteName} logo`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteName} | Medical Billing & Healthcare Technology`,
+    title: `Medical Billing Company in Texas | ${siteName}`,
     description: defaultDescription,
     images: [ogImagePath],
   },

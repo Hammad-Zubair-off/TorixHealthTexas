@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
 import { buildPageMetadata } from "@/lib/site";
-import { faqPageSchema } from "@/lib/seo-schema";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/seo-schema";
 import { ContactPanel } from "@/components/ContactPanel";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Footer } from "@/components/Footer";
@@ -15,16 +15,22 @@ export const metadata: Metadata = buildPageMetadata({
   path: "/contact",
 });
 
+const breadcrumb = [
+  { label: "Home", href: "/" },
+  { label: "Contact Us" },
+];
+
 export default function ContactPage() {
   const c = contactContent;
 
   return (
     <>
-      <JsonLd data={faqPageSchema(c.faqs.items)} />
+      <JsonLd data={[faqPageSchema(c.faqs.items), breadcrumbSchema(breadcrumb, "/contact")]} />
       <Navbar />
       <main>
         <ContactPanel
           heading={c.panel.heading}
+          headingLevel="h1"
           subheading={c.panel.subheading}
           details={c.panel.details}
           hours={c.panel.hours}

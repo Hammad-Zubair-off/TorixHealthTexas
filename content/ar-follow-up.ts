@@ -1,25 +1,27 @@
 import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
-/** Accounts Receivable Operations — aging AR, denials, appeals, and payment recovery. */
+/** AR Follow-Up & Denial Management — aging AR, denials, appeals, and payment recovery. */
 export const arFollowUpContent = {
   meta: {
-    title: "Accounts Receivable Operations",
+    title: "AR Follow-Up & Denial Management",
     description:
-      "Torix Solutions handles AR follow-up, denial resolution, appeals and payment recovery — working inside the system you already use, with a named representative you can call.",
+      "AR follow-up and denial management for Texas practices: aging claims worked by dollar and deadline, denials fixed at the cause, appeals filed on time.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Services" },
-      { label: "Accounts Receivable Operations" },
+      { label: services.arFollowUp.label },
     ],
-    eyebrow: "Healthcare Service",
-    headline: "Aging balances worked — denials fixed, payments recovered.",
+    eyebrow: "AR Follow-Up",
+    headline: "AR follow-up and denial management for unpaid claims.",
     subheadline:
-      "We handle AR follow-up, denial resolution, appeals and payment recovery for your practice, working inside the system you already use, with a named representative you can call.",
-    primaryCta: { label: "Request an A/R Assessment", href: "/contact" },
+      "Accounts receivable (AR) is the money payers and patients still owe you. The older a claim gets, the harder it is to collect, and once a payer's filing deadline passes it's gone. We work your unpaid and denied claims oldest and largest first, fix why they were denied, and file appeals before the deadline, inside the system you already use.",
+    primaryCta: { label: "Request a Free AR Review", href: "/contact" },
     secondaryCta: {
       label: "See Medical Billing",
       href: "/services/medical-billing",
@@ -30,9 +32,9 @@ export const arFollowUpContent = {
     },
   },
   howItWorks: {
-    heading: "How it works",
+    heading: "What AR follow-up includes",
     subheading:
-      "Aging review through appeals, underpayments, patient balances, and reporting — so outstanding revenue doesn't become a write-off.",
+      "From aging review through appeals, underpayments, patient balances and reporting, so money you're owed doesn't become a write-off.",
     footerNote:
       "This service focuses on recovering outstanding balances and resolving denials. For day-to-day claim submission, see Medical Billing. For the full cash path across registration through collections, see Revenue Cycle Management.",
     items: [
@@ -87,13 +89,12 @@ export const arFollowUpContent = {
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "AR follow-up questions",
     items: [
       {
-        question:
-          "Is Accounts Receivable Operations a one-time cleanup or an ongoing service?",
+        question: "Is AR follow-up a one-time cleanup or an ongoing service?",
         answer:
-          "It can be either. Some practices need a one-time recovery project, while others choose ongoing A/R management to keep aging balances under control.",
+          "It can be either. Some practices need a one-time project to recover old claims, while others choose ongoing AR follow-up to keep aging balances under control.",
       },
       {
         question:
@@ -105,25 +106,25 @@ export const arFollowUpContent = {
         question:
           "Can I use this service without switching my medical billing provider?",
         answer:
-          "Yes. Accounts Receivable Operations can often be provided as a standalone service depending on your practice's needs.",
+          "Yes. AR Follow-Up & Denial Management can run on its own while your current billing company or in-house team keeps submitting new claims.",
       },
       {
-        question:
-          "What's the difference between Accounts Receivable Operations and Medical Billing?",
+        question: "What's the difference between AR follow-up and Medical Billing?",
         answer:
-          "Medical Billing runs day-to-day eligibility, claim submission, posting and patient billing. Accounts Receivable Operations focuses on aging balances, denial resolution, appeals, underpayments and recovery of outstanding claims.",
+          "Medical Billing runs day-to-day eligibility, claim submission, posting and patient billing. AR follow-up focuses on claims that are already unpaid or denied: working aging balances, fixing denials, filing appeals and recovering underpayments.",
       },
       {
         question: "How far back can outstanding claims be recovered?",
         answer:
-          "Recovery opportunities vary depending on payer requirements, claim status, filing deadlines, and documentation. During your A/R assessment, we'll identify which balances remain recoverable.",
+          "It depends on each payer's filing and appeal deadlines, the claim's status and the documentation available. During your free AR review we'll tell you which balances can still be recovered.",
       },
+      sharedFaqs.pricing,
     ] satisfies FAQItem[],
   },
   finalCta: {
-    heading: "Stop letting outstanding revenue slip away.",
+    heading: "Stop letting unpaid claims slip away.",
     subheading:
-      "Every aging claim represents revenue your practice has already earned. Bring your A/R ageing and a recent month of denials — we'll show you what is still recoverable.",
-    cta: { label: "Request an A/R Assessment", href: "/contact" },
+      "Every aging claim is money your practice already earned. Bring your AR aging report and a recent month of denials, and we'll show you what can still be recovered.",
+    cta: { label: "Request a Free AR Review", href: "/contact" },
   },
 };

@@ -17,6 +17,8 @@ type ContactPanelProps = {
   formHeading: string;
   formIntro?: string;
   serviceOptions: ContactServiceOption[];
+  /** Use "h1" when the panel opens the page. */
+  headingLevel?: "h1" | "h2";
 };
 
 /** Two-column contact info + form; stacks on mobile. */
@@ -28,14 +30,16 @@ export function ContactPanel({
   formHeading,
   formIntro,
   serviceOptions,
+  headingLevel = "h2",
 }: ContactPanelProps) {
+  const Heading = headingLevel;
   return (
     <Section band="paper" className="border-y border-divider" id="get-in-touch">
       <Container className="grid gap-10 py-[clamp(56px,6.5vw,92px)] lg:grid-cols-2 lg:gap-14">
         <div>
-          <h2 className="mb-3 max-w-[16ch] text-[clamp(26px,2.7vw,34px)] text-text">
+          <Heading className="mb-3 max-w-[16ch] text-[clamp(26px,2.7vw,34px)] text-text">
             {heading}
-          </h2>
+          </Heading>
           {subheading ? (
             <p className="mb-8 max-w-[42ch] text-[15px] text-neutral-600">
               {subheading}

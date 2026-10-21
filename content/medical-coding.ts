@@ -3,13 +3,14 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
 
 /** Medical Coding service page — same component pattern as Medical Billing / RCM. */
 export const medicalCodingContent = {
   meta: {
-    title: "Medical Coding",
+    title: "Medical Coding Services (ICD-10 & CPT)",
     description:
-      "Torix Solutions provides ICD-10 and CPT medical coding for independent practices, with specialty-aware assignment, documentation queries when the note doesn't support the code, and handoff ready for claim submission.",
+      "ICD-10 and CPT medical coding services for Texas practices: codes assigned from your notes, a second review, and questions raised before the claim goes out.",
   },
   hero: {
     breadcrumb: [
@@ -17,10 +18,10 @@ export const medicalCodingContent = {
       { label: "Services" },
       { label: "Medical Coding" },
     ],
-    eyebrow: "Healthcare Service",
-    headline: "ICD-10 and CPT coding that holds up under scrutiny.",
+    eyebrow: "Medical Coding",
+    headline: "Medical coding services for ICD-10 and CPT.",
     subheadline:
-      "Torix Solutions assigns ICD-10 diagnosis and CPT procedure codes from your documentation, raises queries when the note doesn't support the code, and hands off submission-ready work so coding-related denials are caught before the claim goes out.",
+      "Every claim needs a diagnosis code (ICD-10) and a procedure code (CPT) that match what the provider wrote. We read your notes, assign the codes, and ask your provider a question when the note doesn't support the code, so coding errors are caught before the payer sees them instead of after a denial.",
     distinction:
       "Available on its own, or bundled with Medical Billing or full Revenue Cycle Management.",
     primaryCta: { label: "Book a Consultation", href: "/contact" },
@@ -112,7 +113,7 @@ export const medicalCodingContent = {
       {
         title: "Submission-Ready Handoff",
         description:
-          "Coded work handed to your billing team or to Torix billing/RCM so the claim can move without rework at the front of the queue.",
+          "Coded work handed to your billing team, or to our Medical Billing team, so the claim can go out without rework.",
       },
     ] satisfies ProcessStep[],
   },
@@ -159,15 +160,15 @@ export const medicalCodingContent = {
           "A signed BAA before any PHI moves, with access control and audit logging for the documentation we code from.",
       },
       {
-        icon: "mapPin" as IconName,
-        title: "US-Based & In-Person Support",
+        icon: "headphones" as IconName,
+        title: "US-Based Coding Support",
         description:
-          "Staffed in the United States, with a representative who can work through documentation questions with your clinicians when needed.",
+          "A US-based team, with a named representative who works through documentation questions with your providers when needed.",
       },
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Medical coding questions",
     items: [
       {
         question: "Is coding available separately from full billing services?",
@@ -188,13 +189,14 @@ export const medicalCodingContent = {
         question:
           "What's the difference between Medical Coding and Medical Billing Audit?",
         answer:
-          "Medical Coding assigns ICD-10 and CPT codes for claims, with documentation queries when needed. Medical Billing Audit is an independent review of documentation, coding and compliance, written to be useful whether or not you hire us for ongoing work afterwards.",
+          "Medical Coding assigns ICD-10 and CPT codes for your claims every day. A Medical Billing Audit is a one-time or recurring review of your coding, claims and denials, with a list of fixes you can use whether or not you hire us afterwards.",
       },
       {
         question: "Do you code for all specialties or only specific ones?",
         answer:
           "We code across a wide range of specialties. During consultation we confirm specialty fit, documentation patterns and volume so the engagement matches how your practice actually works.",
       },
+      sharedFaqs.pricing,
     ] satisfies FAQItem[],
   },
   finalCta: {

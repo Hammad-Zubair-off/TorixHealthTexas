@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { buildPageMetadata } from "@/lib/site";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo-schema";
+import { buildPageMetadata, services } from "@/lib/site";
+import { faqPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo-schema";
 import { CTABanner } from "@/components/CTABanner";
 import { EnrollmentColumns } from "@/components/EnrollmentColumns";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -22,7 +22,7 @@ export default function CredentialingPage() {
 
   return (
     <>
-      <JsonLd data={[faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/services/credentialing")]} />
+      <JsonLd data={[serviceSchema({ name: services.credentialing.label, description: c.meta.description, path: services.credentialing.href }), faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/services/credentialing")]} />
       <Navbar />
       <main>
         <Hero

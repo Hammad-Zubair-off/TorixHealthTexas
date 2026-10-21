@@ -6,7 +6,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/services/healthcare-seo", "/resources/blog"],
+      // Draft pages use a noindex meta tag instead; crawlers must be allowed to see it.
+      disallow: ["/api/"],
     },
     sitemap: `${siteUrl}/sitemap.xml`,
     host: siteUrl,

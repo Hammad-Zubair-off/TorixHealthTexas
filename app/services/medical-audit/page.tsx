@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { buildPageMetadata } from "@/lib/site";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo-schema";
+import { buildPageMetadata, services } from "@/lib/site";
+import { faqPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo-schema";
 import { BenefitCards } from "@/components/BenefitCards";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -23,7 +23,7 @@ export default function MedicalAuditPage() {
 
   return (
     <>
-      <JsonLd data={[faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/services/medical-audit")]} />
+      <JsonLd data={[serviceSchema({ name: services.medicalAudit.label, description: c.meta.description, path: services.medicalAudit.href }), faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/services/medical-audit")]} />
       <Navbar />
       <main>
         <Hero

@@ -2,24 +2,26 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { EnrollmentColumn } from "@/components/EnrollmentColumns";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
-/** Credentialing and Contract — payer enrollment, CAQH, recredentialing, and related support. */
+/** Credentialing & Contracting — payer enrollment, CAQH, recredentialing, and related support. */
 export const credentialingContent = {
   meta: {
-    title: "Credentialing and Contract",
+    title: "Provider Credentialing Services in Texas",
     description:
-      "Torix Solutions credentialing gets you enrolled with the insurances that matter and keeps you compliant — so enrollment lag and expired credentials don't quietly cut off your ability to bill.",
+      "Provider credentialing for Texas practices: Medicare via PECOS, Texas Medicaid via TMHP PEMS, commercial payers and CAQH, with renewals tracked so none lapse.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Services" },
-      { label: "Credentialing and Contract" },
+      { label: services.credentialing.label },
     ],
-    eyebrow: "Healthcare Service",
-    headline: "Enrolled with the payers that matter — and kept that way.",
+    eyebrow: "Credentialing & Contracting",
+    headline: "Provider credentialing for Texas payers, start to finish.",
     subheadline:
-      "Credentialing delays cost you real money — every day you're not enrolled with a payer is a day you can't bill them. Our credentialing service gets you set up and approved with the insurances that matter, and keeps you compliant so you don't lose network status without knowing it.",
+      "Before an insurance company will pay you, each provider has to be credentialed and enrolled with it. Until that's done, you can see the patient but can't bill the visit. We prepare and file the applications for Medicare, Texas Medicaid and commercial plans, follow up until you're approved, and track renewals so you're never dropped from a network without warning.",
     primaryCta: { label: "Book a Consultation", href: "/contact" },
     secondaryCta: {
       label: "See Medical Billing",
@@ -31,15 +33,15 @@ export const credentialingContent = {
     },
   },
   howItWorks: {
-    heading: "How it works",
+    heading: "What credentialing & contracting includes",
     subheading:
-      "Enrollment, CAQH, follow-up, contracts, recredentialing, NPI/PECOS, and privileging support — managed so nothing sits in limbo.",
+      "Enrollment, CAQH, follow-up, contracts, renewals, NPI and PECOS, and privileging support, managed so no application sits waiting.",
     items: [
       {
         icon: "fileText" as IconName,
         title: "Provider Enrollment",
         description:
-          "We prepare and submit applications to get you enrolled with commercial payers, Medicare, and Medicaid, so you can start billing as soon as possible.",
+          "We prepare and file applications with Medicare, Texas Medicaid and commercial payers, so you can start billing as soon as possible.",
       },
       {
         icon: "clipboard" as IconName,
@@ -80,9 +82,9 @@ export const credentialingContent = {
     ] satisfies FeatureItem[],
   },
   specialties: {
-    heading: "Comprehensive Credentialing & Billing Solutions Across 20+ Medical Specialties",
+    heading: "Credentialing and billing for 20 medical specialties",
     subheading:
-      "We provide specialized medical credentialing, insurance enrollment, and medical billing solutions tailored to the unique needs of healthcare providers across a wide range of specialties.",
+      "These are the specialties we credential and bill for. If yours isn't listed, ask us; we'll tell you honestly whether we're a fit.",
     items: [
       { icon: "users" as IconName, title: "Family Medicine" },
       { icon: "activity" as IconName, title: "Internal Medicine" },
@@ -107,13 +109,13 @@ export const credentialingContent = {
     ] satisfies FeatureItem[],
   },
   enrollmentSolutions: {
-    heading: "How Torix Solutions Simplifies Provider Enrollment",
+    heading: "Provider enrollment with Texas payers",
     subheading:
-      "Government programs and commercial payers follow different rules, timelines, and documentation standards. We manage both so enrollment lag doesn't become lost revenue.",
+      "Government programs and commercial payers follow different rules, timelines and paperwork. We manage both so enrollment delays don't turn into lost revenue.",
     columns: [
       {
         title: "Government Programs",
-        payers: "Medicare | Medicaid | TRICARE",
+        payers: "Medicare (Novitas, PECOS) | Texas Medicaid (TMHP PEMS) | TRICARE",
         items: [
           {
             title: "Enrollment Timeline",
@@ -128,7 +130,7 @@ export const credentialingContent = {
           {
             title: "Application Process",
             description:
-              "PECOS enrollment, state applications, supporting documentation, and program-specific requirements can make the process complex.",
+              "Medicare enrollment runs through PECOS. Texas Medicaid enrollment runs through TMHP's PEMS system, and it has to be done before you can contract with Medicaid managed care plans.",
           },
           {
             title: "Reimbursement Structure",
@@ -144,7 +146,7 @@ export const credentialingContent = {
       },
       {
         title: "Commercial Insurance",
-        payers: "Aetna | UnitedHealthcare | Blue Cross Blue Shield | And More",
+        payers: "Blue Cross and Blue Shield of Texas | Aetna | UnitedHealthcare | And More",
         items: [
           {
             title: "Credentialing Timeline",
@@ -174,7 +176,7 @@ export const credentialingContent = {
         ],
       },
       {
-        title: "The Torix Solutions Enrollment Solution",
+        title: "How We Handle Enrollment",
         items: [
           {
             title: "Streamlined Processing",
@@ -213,66 +215,46 @@ export const credentialingContent = {
       heading: "Wondering which is the right insurance company for you?",
       payers: [
         "Medicare",
-        "Medicaid",
+        "Texas Medicaid",
         "TRICARE",
         "Aetna",
         "UnitedHealthcare",
-        "Blue Cross Blue Shield",
+        "Blue Cross and Blue Shield of Texas",
         "And More",
       ],
     },
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Credentialing questions",
     items: [
       {
-        question: "Why is my provider credentialing taking so long?",
+        question: "How long does provider credentialing take, and why is mine slow?",
         answer:
-          "Credentialing delays can result from incomplete applications, missing documents, CAQH discrepancies, payer backlogs, or additional verification requirements. Torix Solutions manages the process and follows up with payers to help keep applications moving.",
+          "It varies by payer, specialty and how complete the first application is. Most delays come from missing documents, an out-of-date CAQH profile, payer backlogs or extra verification requests. We set expectations for your payer mix up front and track every application, so you know what is pending and what is approved.",
       },
+      sharedFaqs.texasMedicaid,
+      sharedFaqs.medicare,
       {
-        question:
-          "Can Torix Solutions handle Medicare, Medicaid, and commercial payer enrollment?",
+        question: "What happens if an application is denied, returned or stalled?",
         answer:
-          "Yes. We assist providers with Medicare, Medicaid, and major commercial payer enrollment based on their state, specialty, taxonomy, and payer requirements.",
-      },
-      {
-        question:
-          "What happens if my credentialing application is rejected or returned?",
-        answer:
-          "Our team reviews the reason for the rejection or return, identifies the issue, makes the necessary corrections, and works toward resubmission and continued payer follow-up.",
-      },
-      {
-        question: "How long does credentialing typically take?",
-        answer:
-          "Timelines vary by payer, specialty and how complete the initial packet is. During consultation we set expectations for your payer mix and track status so you know what is pending versus confirmed.",
+          "We find out why, correct what's needed, resubmit or escalate with the payer, and keep you updated, so you're never left guessing why a network isn't active yet.",
       },
       {
         question: "Do you handle CAQH profile setup and maintenance?",
         answer:
-          "Yes. CAQH setup, updates and scheduled attestation are part of the service, because incomplete profiles are one of the most common reasons applications stall.",
+          "Yes. CAQH setup, updates and scheduled re-attestation are part of the service, because an incomplete profile is one of the most common reasons applications stall.",
       },
       {
-        question:
-          "What happens if an enrollment application is denied or delayed?",
+        question: "Do you track recredentialing and revalidation deadlines?",
         answer:
-          "We review the reason, correct what we can, resubmit or escalate follow-up with the payer, and keep you informed so the practice isn't left guessing why a panel isn't active.",
+          "Yes. Renewal dates for every provider and payer, including Medicare and Texas Medicaid revalidation, are tracked on a calendar and started early, so nothing lapses unnoticed.",
       },
       {
-        question: "Do you automatically track recredentialing deadlines?",
+        question: "Can we use credentialing without outsourcing our billing?",
         answer:
-          "Yes. Recredentialing is managed on a calendar with proactive follow-up before deadlines, so renewals don't lapse unnoticed.",
+          "Yes. Credentialing & Contracting can stand alone or run alongside Medical Billing. Many practices use it when adding a new provider or cleaning up enrollment problems, even if billing stays in house.",
       },
-      {
-        question: "Is Credentialing and Contract available separately from Medical Billing?",
-        answer:
-          "Yes. Credentialing and Contract can stand alone or run alongside Medical Billing or Revenue Cycle Management. Many practices use it when adding providers or cleaning up enrollment lag even if billing stays in house.",
-      },
-      {
-        question: "Which insurance networks do you work with?",
-        answer:
-          "We work across commercial and government payers common to independent practices. Scope is confirmed per engagement based on your specialty, locations and the panels you need to bill.",
-      },
+      sharedFaqs.pricing,
     ] satisfies FAQItem[],
   },
   finalCta: {

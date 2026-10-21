@@ -3,24 +3,26 @@ import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ContactDetail } from "@/components/ContactPanel";
 import type { ContactServiceOption } from "@/components/ContactForm";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { serviceArea, services } from "@/lib/site";
 import { siteContact } from "@/lib/site-contact";
 
-/** Contact Us page — form posts to `/api/contact` (Resend). */
+/** Contact Us page — form posts to `/api/contact`. No office address is published; the site only states its service area. */
 export const contactContent = {
   meta: {
-    title: "Contact Us",
+    title: "Contact Us About Medical Billing in Texas",
     description:
-      "Contact Torix Solutions for medical billing, healthcare software, revenue cycle management, and compliance questions. Book a consultation or send a message.",
+      "Contact Medical Billers to book a free billing review for your Texas practice. Call, email or send a message, and a member of our billing team replies.",
   },
   panel: {
-    heading: "Contact information",
-    subheading: "Reach us directly, or send a message with the form.",
-    // Office address — West Jordan, UT
+    heading: "Contact us about medical billing in Texas",
+    subheading:
+      "Call, email or send a message. Tell us about your practice and what's going wrong with billing, and we'll set up a free review.",
     details: [
       {
         icon: "mapPin" as IconName,
-        label: "Office Address",
-        value: "7533 S Center View Ct Ste N, West Jordan, UT 84084",
+        label: "Service area",
+        value: `Serving ${serviceArea} practices`,
       },
       {
         icon: "headphones" as IconName,
@@ -41,79 +43,75 @@ export const contactContent = {
     ],
     formHeading: "Send us a message",
     formIntro:
-      "Have a question or want to discuss your healthcare needs? Complete the form below, and a member of our team will get back to you as soon as possible.",
+      "Tell us about your practice and what you need help with. A member of our billing team will get back to you during business hours.",
   },
   serviceOptions: [
-    { value: "medical-billing", label: "Medical Billing Services" },
-    { value: "medical-coding", label: "Medical Coding" },
-    { value: "rcm", label: "Revenue Cycle Management (RCM)" },
-    { value: "credentialing", label: "Credentialing and Contract" },
-    { value: "medical-audit", label: "Medical Billing Audit" },
-    { value: "ar-follow-up", label: "Accounts Receivable Operations" },
-    { value: "billing-software", label: "Medical Billing Software" },
-    { value: "healthcare-platform", label: "Healthcare Platform Solutions" },
-    { value: "hipaa", label: "HIPAA-Focused Software & Compliance" },
-    { value: "general", label: "General Questions & Support" },
+    { value: "medical-billing", label: services.medicalBilling.label },
+    { value: "rcm", label: services.rcm.label },
+    { value: "medical-coding", label: services.medicalCoding.label },
+    { value: "ar-follow-up", label: services.arFollowUp.label },
+    { value: "credentialing", label: services.credentialing.label },
+    { value: "medical-audit", label: services.medicalAudit.label },
+    { value: "billing-software", label: services.billingSoftware.label },
+    { value: "hipaa", label: services.hipaaSoftware.label },
+    { value: "general", label: "General Question" },
   ] satisfies ContactServiceOption[],
   whyContact: {
-    heading: "Why contact Torix Solutions?",
+    heading: "What we can help with",
     subheading:
-      "When you reach out to us, you'll connect with professionals who understand both healthcare operations and modern technology. We focus on delivering practical guidance, not sales pressure, so you can make informed decisions for your practice.",
+      "You'll talk to someone who works on billing every day. No sales pressure, just practical answers so you can decide what's right for your practice.",
     items: [
       {
         icon: "activity" as IconName,
-        title: "Improving revenue cycle performance",
-        description: "Talk through denials, A/R and where cash gets stuck.",
+        title: "Unpaid & denied claims",
+        description: "Talk through denials, AR and where payments are getting stuck.",
       },
       {
         icon: "fileText" as IconName,
-        title: "Reducing billing inefficiencies",
-        description: "Clarify scope between billing, coding, A/R and RCM.",
+        title: "Choosing the right service",
+        description: "Work out whether you need billing, coding, AR follow-up or full RCM.",
       },
       {
-        icon: "monitor" as IconName,
-        title: "Modernizing healthcare technology",
-        description: "Discuss billing software, platform modules and integrations.",
+        icon: "building" as IconName,
+        title: "Credentialing problems",
+        description: "Get help with Medicare, Texas Medicaid or commercial enrollment.",
       },
       {
         icon: "shield" as IconName,
-        title: "Strengthening compliance practices",
-        description: "Ask about HIPAA controls, BAAs and secure handling of PHI.",
+        title: "HIPAA & BAAs",
+        description: "Ask how we protect patient data and when the BAA is signed.",
       },
       {
         icon: "handshake" as IconName,
-        title: "Technical and operational questions",
-        description: "Get clear answers before you change vendors or systems.",
+        title: "Switching billing companies",
+        description: "Find out how the handover works without interrupting cash flow.",
       },
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Contact questions",
     items: [
       {
-        question: "How quickly will I receive a response?",
+        question: "How quickly will I hear back?",
         answer:
-          "We aim to respond to all inquiries as quickly as possible during normal business hours.",
+          "We reply to messages during business hours, Monday to Friday. If it's urgent, calling is the fastest way to reach us.",
       },
       {
-        question: "Do you offer consultations before getting started?",
+        question: "Is the billing review really free?",
         answer:
-          "Yes. We offer consultations to better understand your needs and recommend the most appropriate solution.",
+          "Yes. We look at a recent remittance and your unpaid claims and tell you what we'd change. There's no charge and no obligation to hire us.",
       },
-      {
-        question: "Can I request information about multiple services?",
-        answer:
-          "Absolutely. Whether you're interested in one service or a complete healthcare solution, we're happy to discuss your requirements.",
-      },
+      sharedFaqs.pricing,
+      sharedFaqs.switching,
       {
         question: "Do you work with practices of different sizes?",
         answer:
-          "Yes. We support healthcare organizations ranging from independent practices to growing medical groups.",
+          "Yes. We work with solo providers and with growing groups. The scope and price are set for your practice's volume and payer mix.",
       },
       {
-        question: "Is my information kept confidential?",
+        question: "Is the information I send kept confidential?",
         answer:
-          "Yes. We treat all inquiries with professionalism and follow secure practices when handling information shared with us.",
+          "Yes. Please don't include patient information in the contact form; we'll set up a secure way to share it once a BAA is signed.",
       },
     ] satisfies FAQItem[],
   },

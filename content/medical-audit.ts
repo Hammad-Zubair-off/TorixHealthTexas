@@ -3,13 +3,14 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
 
 /** Medical Billing Audit — KPI, denial, and productivity analysis with corrective actions. */
 export const medicalAuditContent = {
   meta: {
-    title: "Medical Billing Audit",
+    title: "Medical Billing Audit Services",
     description:
-      "Torix Solutions analyzes your practice's revenue cycle KPIs, denial patterns, and provider productivity — turning billing data into decisions you can act on.",
+      "A medical billing audit for Texas practices: we review claims, coding, denials and payer payments, then rank the fixes by how much revenue each one affects.",
   },
   hero: {
     breadcrumb: [
@@ -17,12 +18,12 @@ export const medicalAuditContent = {
       { label: "Services" },
       { label: "Medical Billing Audit" },
     ],
-    eyebrow: "Healthcare Service",
-    headline: "Know which numbers are moving, and why.",
+    eyebrow: "Medical Billing Audit",
+    headline: "Medical billing audit: find where revenue is leaking.",
     subheadline:
-      "Most practices have data. Very few have answers. A monthly collections figure tells you what happened; it doesn't tell you whether your clean claims ratio slipped, which payer is underpaying, or which provider's E/M distribution is quietly costing you revenue.",
+      "Your monthly collections number tells you what came in. It doesn't tell you which payer is underpaying, which codes keep getting denied, or how many claims are about to miss their filing deadline. A medical billing audit answers those questions with your own data, and tells you what to fix first.",
     distinction:
-      "Torix Solutions analyzes your practice's operational and financial data against defined benchmarks, identifies where performance is deviating, and returns specific corrective actions — not a dashboard you'll stop opening after two weeks.",
+      "You get a written report with specific fixes, ranked by how much revenue each one affects. It's yours to use whether or not you hire us.",
     primaryCta: { label: "Request an Audit", href: "/contact" },
     secondaryCta: {
       label: "See Medical Billing",
@@ -42,7 +43,7 @@ export const medicalAuditContent = {
         icon: "activity" as IconName,
         title: "Revenue Cycle KPIs",
         description:
-          "Clean claims ratio, days in AR (tracked against a 30–35 day claim payment target), net collection rate, denial rate by payer and root cause, AR aging distribution, and cost to collect — the metrics that actually predict financial health.",
+          "Clean claims ratio, days in AR, net collection rate, denial rate by payer and cause, AR aging, and cost to collect: the numbers that show whether billing is healthy.",
       },
       {
         icon: "clipboard" as IconName,
@@ -66,7 +67,7 @@ export const medicalAuditContent = {
         icon: "users" as IconName,
         title: "Provider Productivity",
         description:
-          "Individual provider performance on volume, coding accuracy, documentation completeness, and revenue contribution — compared against benchmarks from comparable practices. The point isn't ranking providers; it's identifying behaviors that affect practice-level results.",
+          "Each provider's volume, coding accuracy and documentation completeness, compared against targets set for your specialty. The point isn't ranking providers; it's finding habits that affect the whole practice.",
       },
       {
         icon: "building" as IconName,
@@ -188,15 +189,15 @@ export const medicalAuditContent = {
     ] satisfies FeatureItem[],
   },
   whyUs: {
-    heading: "Why Torix Solutions",
+    heading: "Why audit with Medical Billers",
     subheading:
-      "Benchmarks, root cause, and recommendations tied to dollars — with a path to implement findings.",
+      "Targets, root causes and fixes tied to dollars, with a way to put the fixes in place.",
     items: [
       {
         icon: "handshake" as IconName,
-        title: "Operating Experience",
+        title: "Done by Billing People",
         description:
-          "Analysts and consultants with direct revenue cycle operating experience, not general-purpose data staff.",
+          "The review is done by people who work claims every day, so findings come with practical fixes, not just charts.",
       },
       {
         icon: "layers" as IconName,
@@ -218,26 +219,25 @@ export const medicalAuditContent = {
       },
       {
         icon: "shield" as IconName,
-        title: "HIPAA Compliant Throughout",
+        title: "Signed BAA Before Day One",
         description:
-          "All PHI and financial data handled under documented safeguards.",
+          "A Business Associate Agreement is signed before any patient or financial data is shared with us.",
       },
       {
         icon: "check" as IconName,
-        title: "Connected to Execution",
+        title: "Fixes You Can Act On",
         description:
-          "Because Torix also runs revenue cycle management, billing audits, and credentialing, findings can be implemented rather than just delivered.",
+          "Because we also run billing, AR follow-up and credentialing, we can put the fixes in place for you if you want, or hand them to your team.",
       },
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Medical billing audit questions",
     items: [
       {
-        question:
-          "How is performance analysis different from a billing audit?",
+        question: "What is included in a medical billing audit?",
         answer:
-          "An audit tests a sample of claims for accuracy and compliance — it answers \"were these coded and billed correctly?\" Performance analysis is broader and forward-looking: it measures the whole revenue cycle against benchmarks to answer \"where is this practice losing money, and what should change?\" Audits often feed into it.",
+          "We test a sample of claims for coding and billing accuracy, and we measure your whole revenue cycle: denial rates and causes, days in AR, payer payments against your contracts, and front-desk steps like eligibility and authorization. You get a report with specific fixes ranked by revenue impact.",
       },
       {
         question: "What data do you need from us?",
@@ -245,9 +245,9 @@ export const medicalAuditContent = {
           "Front-office and registration records, billing and coding data, remittance and payment data, payer contracts, and fee schedules. We'll provide a specific list scoped to your systems.",
       },
       {
-        question: "How often should performance be reviewed?",
+        question: "How often should a practice audit its billing?",
         answer:
-          "Monthly for core KPIs, quarterly for deeper analysis. Annual review is too infrequent to catch a trend while it's still cheap to correct.",
+          "We suggest checking core numbers like denial rate and days in AR monthly, with a deeper audit every quarter. A yearly review is usually too late to catch a problem while it's still cheap to fix.",
       },
       {
         question: "What benchmarks do you compare against?",
@@ -271,27 +271,13 @@ export const medicalAuditContent = {
         answer:
           "Front-end fixes — eligibility verification, registration accuracy, authorization capture — typically show up within a billing cycle. Coding and contract changes take longer to flow through.",
       },
-      {
-        question: "What is included in a medical billing audit?",
-        answer:
-          "A billing audit can review claims, coding, documentation, payments, denials, payer reimbursements, and other revenue cycle processes to identify errors, compliance concerns, and missed revenue opportunities.",
-      },
-      {
-        question: "How can a billing audit help my practice?",
-        answer:
-          "An audit can help identify recurring billing errors, underpayments, missed charges, incorrect coding, avoidable denials, and process inefficiencies that may be affecting your revenue.",
-      },
-      {
-        question: "How often should a medical practice conduct a billing audit?",
-        answer:
-          "The ideal frequency depends on the size and complexity of the practice. Regular audits can help identify problems early and ensure billing processes remain accurate, efficient, and compliant.",
-      },
+      sharedFaqs.pricing,
     ] satisfies FAQItem[],
   },
   finalCta: {
     heading: "Get started with a performance assessment.",
     subheading:
-      "If you can't currently state your clean claims ratio, your denial rate by root cause, and your days in AR, you're managing the practice's finances on a lagging indicator. Send us your specialty, practice size, and payer mix and we'll scope an analysis.",
+      "If you don't know your clean claims ratio, your denial rate by cause and your days in AR, you're managing the practice's finances in the dark. Send us your specialty, practice size and payer mix and we'll scope an audit.",
     cta: { label: "Request an Audit", href: "/contact" },
   },
 };

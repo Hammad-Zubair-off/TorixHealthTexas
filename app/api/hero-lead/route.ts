@@ -102,8 +102,8 @@ export async function POST(request: Request) {
   const fromEmail =
     process.env.CONTACT_FROM_EMAIL?.trim() ||
     (gmailUser
-      ? `Torix Solutions <${gmailUser}>`
-      : "Torix Solutions <onboarding@resend.dev>");
+      ? `Medical Billers <${gmailUser}>`
+      : "Medical Billers <onboarding@resend.dev>");
 
   const hasResend = Boolean(resendApiKey);
   const hasGmail = Boolean(gmailUser && gmailAppPassword);
@@ -126,7 +126,7 @@ export async function POST(request: Request) {
   const subject = `New quote request: ${data.specialty} — ${data.fullName}`;
 
   const text = [
-    "New hero lead form submission from Torix Health Texas",
+    "New quote request from www.medicalbillerstexas.com",
     "",
     `Full name: ${data.fullName}`,
     `Specialty: ${data.specialty}`,
@@ -140,7 +140,7 @@ export async function POST(request: Request) {
 
   const html = `
     <div style="font-family: system-ui, sans-serif; line-height: 1.5; color: #111;">
-      <p style="margin: 0 0 16px;">New hero lead form submission from <strong>Torix Health Texas</strong></p>
+      <p style="margin: 0 0 16px;">New quote request from <strong>www.medicalbillerstexas.com</strong></p>
       <table style="border-collapse: collapse; width: 100%; max-width: 560px;">
         <tr><td style="padding: 6px 0; color: #555;">Full name</td><td style="padding: 6px 0;">${escapeHtml(data.fullName)}</td></tr>
         <tr><td style="padding: 6px 0; color: #555;">Specialty</td><td style="padding: 6px 0;">${escapeHtml(data.specialty)}</td></tr>

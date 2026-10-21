@@ -2,33 +2,35 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
 /** HIPAA-Compliant Software solution page — security & compliance practices. */
 export const hipaaCompliantSoftwareContent = {
   meta: {
-    title: "HIPAA-Compliant Software",
+    title: "HIPAA-Compliant Billing Software",
     description:
-      "Torix Solutions HIPAA-compliant software practices: role-based access control, audit logging, encryption in transit and at rest, and a signed Business Associate Agreement. Documented in detail rather than asserted in a badge.",
+      "How Medical Billers protects patient data in billing: a signed BAA before day one, role-based access, audit logging, and encryption in transit and at rest.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
-      { label: "Solutions" },
-      { label: "HIPAA-Compliant Software" },
+      { label: "Software" },
+      { label: services.hipaaSoftware.label },
     ],
-    eyebrow: "Healthcare Technology",
-    headline: "Compliance as an operating practice, not a badge.",
+    eyebrow: "HIPAA compliance",
+    headline: "HIPAA-compliant software and patient data handling.",
     subheadline:
-      "Torix Solutions protects healthcare data with encryption, role-based access, audit logging and a signed Business Associate Agreement before PHI moves. Controls are documented in detail rather than asserted in a marketing claim.",
+      "Billing means handling protected health information (PHI): names, insurance IDs, diagnoses. HIPAA requires that it stays private. We sign a Business Associate Agreement before you share anything, limit who can see your data, log every access, and encrypt data both when it moves and when it's stored.",
     distinction:
-      "Secure healthcare technology and HIPAA-focused processes across our software and operational work.",
+      "These safeguards cover both our billing work and the Medical Billing Software that comes free with it.",
     primaryCta: {
-      label: "Learn About Our Compliance Practices",
+      label: "Ask About Our Compliance Practices",
       href: "/contact",
     },
     secondaryCta: {
-      label: "See Healthcare Platform",
-      href: "/solutions/healthcare-platform",
+      label: "See the Billing Software",
+      href: services.billingSoftware.href,
     },
     image: {
       src: "/brand/heroes/hipaa.jpg",
@@ -56,7 +58,7 @@ export const hipaaCompliantSoftwareContent = {
         icon: "clipboard" as IconName,
         title: "Staff HIPAA Training",
         description:
-          "People who handle PHI are trained on HIPAA obligations and how Torix processes are supposed to work in practice.",
+          "Everyone who handles PHI is trained on HIPAA obligations and on how our processes protect it day to day.",
       },
       {
         icon: "monitor" as IconName,
@@ -124,7 +126,7 @@ export const hipaaCompliantSoftwareContent = {
     ] satisfies ProcessStep[],
   },
   whyUs: {
-    heading: "Why choose our HIPAA-compliant platform",
+    heading: "Why practices trust us with PHI",
     subheading:
       "Healthcare-focused security and support around how PHI is actually used.",
     items: [
@@ -147,16 +149,17 @@ export const hipaaCompliantSoftwareContent = {
           "Role-based permissions and audit trails so access is limited and reviewable.",
       },
       {
-        icon: "mapPin" as IconName,
-        title: "Dedicated Compliance Support",
+        icon: "headphones" as IconName,
+        title: "Named Account Representative",
         description:
-          "US-based support that can walk through how controls apply to your engagement, not only reset passwords.",
+          "A US-based representative who can explain how these controls apply to your practice, not only reset passwords.",
       },
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "HIPAA questions",
     items: [
+      sharedFaqs.baa,
       {
         question: "What does HIPAA compliance mean for your software?",
         answer:

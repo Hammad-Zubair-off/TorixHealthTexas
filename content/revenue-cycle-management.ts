@@ -2,182 +2,165 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
 /** Revenue Cycle Management — full-cycle oversight from intake to final payment. */
 export const rcmContent = {
   meta: {
-    title: "Revenue Cycle Management",
+    title: "Revenue Cycle Management Services",
     description:
-      "Torix Solutions manages your entire revenue cycle from patient scheduling to final payment — so nothing falls through the cracks between coding, claims, credentialing, and collections.",
+      "Revenue cycle management for Texas practices: eligibility, prior auth, coding, claims, denials and collections run as one process with monthly reporting.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
       { label: "Services" },
-      { label: "Revenue Cycle Management" },
+      { label: services.rcm.label },
     ],
-    eyebrow: "Healthcare Service",
-    headline: "The full revenue cycle, managed as one process.",
+    eyebrow: "Revenue Cycle Management",
+    headline: "Revenue cycle management, run as one process.",
     subheadline:
-      "Revenue cycle management is everything working together — not just billing in isolation. We manage your entire cycle from patient scheduling to final payment, so nothing falls through the cracks between coding, claims, credentialing, and collections.",
-    primaryCta: { label: "Book a Consultation", href: "/contact" },
+      "Your revenue cycle is every step between booking a patient and having the money in your account. When registration, prior authorization, coding, billing and collections are handled by different people, claims fall through the gaps. We run all of those steps as one process, with one team and one named representative accountable for the result.",
+    primaryCta: { label: "Book a Free Billing Review", href: "/contact" },
     secondaryCta: {
       label: "See Medical Billing",
-      href: "/services/medical-billing",
+      href: services.medicalBilling.href,
     },
     image: {
       src: "/brand/heroes/rcm.jpg",
-      alt: "Operations teammates collaborating on revenue and workflow results in a bright office",
+      alt: "Billing team reviewing revenue cycle results together",
     },
   },
   howItWorks: {
-    heading: "How it works",
+    heading: "What revenue cycle management includes",
     subheading:
-      "End-to-end oversight, continuous monitoring, and coordination across billing, credentialing, and collections.",
+      "Everything in Medical Billing, plus the steps before and after the claim that decide whether it gets paid.",
     footerNote:
-      "If you only need claims submitted and followed up on, see our Medical Billing service.",
+      "If you only need claims submitted and followed up, Medical Billing may be enough.",
     items: [
       {
         icon: "layers" as IconName,
-        title: "End-to-End Cycle Oversight",
+        title: "One Team for the Whole Cycle",
         description:
-          "Every stage from patient intake to final payment is managed under one system, so nothing gets lost in handoffs between departments.",
+          "Every stage from patient intake to final payment is handled by one team, so nothing is lost when work passes from one person to the next.",
       },
       {
         icon: "activity" as IconName,
-        title: "Performance Monitoring",
+        title: "Performance Tracking",
         description:
-          "Key metrics like days in AR, denial rate, and net collection rate are tracked continuously, not just reviewed once a year.",
+          "Days in AR, denial rate and net collection rate are tracked every month, not reviewed once a year.",
       },
       {
         icon: "check" as IconName,
-        title: "Process Optimization",
+        title: "Fixing the Cause",
         description:
-          "Recurring bottlenecks and inefficiencies in your billing workflow are identified and fixed before they cost you more revenue.",
+          "When the same denial keeps coming back, we fix the step that causes it, not just the claim in front of us.",
       },
       {
         icon: "shield" as IconName,
-        title: "Compliance Oversight",
+        title: "Payer Rule Updates",
         description:
-          "Coding, billing, and payer requirements are kept current with evolving regulations, reducing audit and compliance risk.",
+          "Coding and payer rule changes are applied as they happen, which lowers audit and compliance risk.",
       },
       {
         icon: "users" as IconName,
-        title: "Cross-Functional Coordination",
+        title: "Billing & Credentialing Together",
         description:
-          "Billing, credentialing, and AR teams work off the same data, so a change in one area (like a payer contract) doesn't create problems in another.",
+          "Billing, credentialing and AR work from the same information, so a payer enrollment change doesn't quietly cause denials.",
       },
       {
         icon: "monitor" as IconName,
-        title: "Ongoing Reporting",
+        title: "Monthly Reporting",
         description:
-          "You get regular visibility into practice financial health — not just numbers, but what's driving them.",
+          "A plain-language report on what was billed, what was paid and what is still outstanding, with the reasons behind the numbers.",
       },
     ] satisfies FeatureItem[],
   },
   workflow: {
-    heading: "The revenue cycle workflow we run",
+    heading: "The revenue cycle steps we run",
     subheading:
-      "From the first eligibility check to the final report — each stage is owned, not just touched.",
+      "Each step has an owner on our team, from the first eligibility check to the monthly report.",
     steps: [
       {
         icon: "check" as IconName,
         title: "Eligibility Verification",
         description:
-          "Insurance surprises? Not on our watch. We verify patient coverage before they even step into your clinic, as your time is too valuable to waste on verification pitfalls.",
+          "Patient coverage is checked before the visit, so you know what the plan covers and what the patient owes.",
       },
       {
         icon: "clipboard" as IconName,
         title: "Prior Authorization",
         description:
-          "We deal with the red tape, so no more hindered claims. From charge capturing to chasing approvals, we get your treatments paid fast — think of us as your front desk officer handling the \"please hold\" music.",
+          "Authorizations are requested and tracked for services that need them, so treatment isn't denied after the fact.",
       },
       {
         icon: "fileText" as IconName,
         title: "Charge Capture",
         description:
-          "Every service is counted, coded, and claimed beforehand. We make sure every visit, procedure, and modifier is captured correctly. We really don't like redoing stuff that can be corrected the first time.",
+          "Every visit, procedure and modifier is captured, so services you performed aren't left unbilled.",
       },
       {
         icon: "layers" as IconName,
         title: "Claim Submission",
         description:
-          "Clean claims aren't optional. They're our baseline. We scrub, file, and submit your claims with surgical precision, reducing rejections and speeding up your cash flow. Every code is checked by an experienced coder.",
+          "Every claim is scrubbed for errors before it is sent, and coding is checked by a coder, to cut first-pass rejections.",
       },
       {
         icon: "monitor" as IconName,
-        title: "Payment Processing",
+        title: "Payment Posting",
         description:
-          "We make sure claim approval means you are getting paid. From EOBs to ERA tracking, we keep everything organized and flowing, so your income isn't stuck in a never-ending cycle.",
+          "Payments from EOBs and ERAs are posted against each claim, and underpayments are flagged for follow-up.",
       },
       {
         icon: "clock" as IconName,
-        title: "AR Follow-ups",
+        title: "AR Follow-Up",
         description:
-          "Old claims don't scare us — we know how to pull them back. We follow up with payers, sort out delays, and keep your revenue cycle moving even when payers stall.",
+          "Unpaid claims are worked with the payer by phone and portal until they are paid or resolved.",
       },
       {
         icon: "alert" as IconName,
         title: "Denial Management",
         description:
-          "Denials happen. But we don't just let it be. Our team investigates every denial, corrects the issue, and gets it resubmitted fast. We chase down every single penny for you tirelessly.",
+          "Each denial is investigated, corrected and resubmitted or appealed before the filing deadline.",
       },
       {
         icon: "headphones" as IconName,
-        title: "Patient Collection",
+        title: "Patient Collections",
         description:
-          "We make it easy for patients to pay, and painless for you to ask. From soft reminders to secure online portals, we keep collections friendly, transparent, and on spot.",
+          "Clear statements and polite reminders, so patients understand what they owe and how to pay.",
       },
       {
         icon: "activity" as IconName,
-        title: "Reporting and Analysis",
+        title: "Reporting",
         description:
-          "What's working? What's leaking? Torix Solutions shows you a holistic picture. With real-time dashboards and actionable insights, you can make smarter decisions and hit revenue goals without delays.",
+          "Monthly reports show what is working, where money is being lost and what we are doing about it.",
       },
     ] satisfies ProcessStep[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Revenue cycle management questions",
     items: [
-      {
-        question:
-          "What's the difference between Revenue Cycle Management and Medical Billing?",
-        answer:
-          "Medical Billing focuses on the claim path and performance insight around billing outcomes. Revenue Cycle Management is everything working together: from patient scheduling to final payment, coordinating coding, claims, credentialing, and collections so nothing falls between stages.",
-      },
+      sharedFaqs.billingVsRcm,
       {
         question: "What parts of the revenue cycle are included?",
         answer:
-          "Intake through final payment under one system — including coordination across coding, claims, credentialing, AR, and collections. Exact scope is confirmed in writing before onboarding starts.",
+          "Eligibility, prior authorization, charge capture, coding, claim submission, payment posting, AR follow-up, denial management, patient collections and reporting. The exact scope is confirmed in writing before we start.",
       },
+      sharedFaqs.software,
+      sharedFaqs.switching,
+      sharedFaqs.pricing,
       {
-        question:
-          "Do I need to replace my current EHR or Practice Management system?",
+        question: "Can I start with Medical Billing and move to full RCM later?",
         answer:
-          "No. We work inside the system you already run. Our own software is available where it helps, but adopting it is optional and never a condition of the engagement.",
-      },
-      {
-        question: "How is onboarding handled without disrupting operations?",
-        answer:
-          "Onboarding is phased. We review your current process, configure access alongside your staff, and run in parallel where needed so cash flow continues while ownership transfers stage by stage.",
-      },
-      {
-        question: "How is pricing structured?",
-        answer:
-          "Pricing is quoted per practice after the assessment, based on volume, payer mix, specialty and which stages are in scope. The number and the scope go in writing before anything starts.",
-      },
-      {
-        question:
-          "Can I start with Medical Billing and later move to full RCM?",
-        answer:
-          "Yes. Many practices begin with Medical Billing and expand into full Revenue Cycle Management once claims are stable. The same named representative stays with the account as the scope grows.",
+          "Yes. Many practices start with Medical Billing and add the rest of the revenue cycle once claims are stable. The same named representative stays with your account as the scope grows.",
       },
     ] satisfies FAQItem[],
   },
   finalCta: {
-    heading: "Let's map your complete revenue cycle.",
+    heading: "Let's map your revenue cycle.",
     subheading:
-      "Bring your A/R ageing and a recent month of denials. We'll show you where the cash path breaks, whether or not you engage us.",
-    cta: { label: "Book a Consultation", href: "/contact" },
+      "Bring your AR aging report and a recent month of denials. We'll show you where payments are getting stuck, whether or not you hire us.",
+    cta: { label: "Book a Free Billing Review", href: "/contact" },
   },
 };

@@ -3,15 +3,30 @@ import type { Metadata } from "next";
 /** Live production origin — override with NEXT_PUBLIC_SITE_URL for local/staging. */
 export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://www.torixhealth.com"
+  "https://www.medicalbillerstexas.com"
 ).replace(/\/$/, "");
 
-export const siteName = "Torix Solutions";
+export const siteName = "Medical Billers";
+
+/** Area served — the site describes no physical office, only the state it serves. */
+export const serviceArea = "Texas";
 
 export const defaultDescription =
-  "Torix Solutions handles medical billing, coding, credentialing, and revenue cycle management so practices get paid faster with fewer denials.";
+  "Medical billing services for Texas practices: claims, coding, AR follow-up and credentialing, with a signed BAA and a named account representative.";
 
-export const ogImagePath = "/brand/torix-logo-mark.png";
+/** One label per service, used by nav, footer, cards, forms and schema. */
+export const services = {
+  medicalBilling: { label: "Medical Billing", href: "/services/medical-billing" },
+  rcm: { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
+  medicalCoding: { label: "Medical Coding", href: "/services/medical-coding" },
+  medicalAudit: { label: "Medical Billing Audit", href: "/services/medical-audit" },
+  arFollowUp: { label: "AR Follow-Up & Denial Management", href: "/services/ar-follow-up" },
+  credentialing: { label: "Credentialing & Contracting", href: "/services/credentialing" },
+  billingSoftware: { label: "Medical Billing Software", href: "/solutions/medical-billing-software" },
+  hipaaSoftware: { label: "HIPAA-Compliant Software", href: "/solutions/hipaa-compliant-software" },
+} as const;
+
+export const ogImagePath = "/brand/medical-billers-og.png";
 
 type BuildPageMetadataInput = {
   title: string;
@@ -52,8 +67,8 @@ export function buildPageMetadata({
       images: [
         {
           url: ogImagePath,
-          width: 365,
-          height: 431,
+          width: 1200,
+          height: 630,
           alt: `${siteName} logo`,
         },
       ],

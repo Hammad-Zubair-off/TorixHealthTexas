@@ -3,227 +3,209 @@ import type { FAQItem } from "@/components/FAQAccordion";
 import type { FeatureItem } from "@/components/IconFeatureGrid";
 import type { ProcessStep } from "@/components/ProcessTimeline";
 import type { IconName } from "@/components/icons";
+import { sharedFaqs } from "@/content/shared-faqs";
+import { services } from "@/lib/site";
 
-/** Medical Billing Software solution page — in-house billing automation platform. */
+/** Medical Billing Software — offered only as a free part of the billing service. */
 export const medicalBillingSoftwareContent = {
   meta: {
-    title: "Medical Billing Software",
+    title: "Free Medical Billing Software for Clients",
     description:
-      "Torix Solutions Medical Billing Software: in-house billing automation with EHR and practice management integration, workflow automation and reporting you can read. Bundled at no cost with the Medical Billing service.",
+      "Medical billing software free with our billing service: see every claim, payment and denial in one place. Optional — we can also work in your current system.",
   },
   hero: {
     breadcrumb: [
       { label: "Home", href: "/" },
-      { label: "Solutions" },
-      { label: "Medical Billing Software" },
+      { label: "Software" },
+      { label: services.billingSoftware.label },
     ],
-    eyebrow: "Healthcare Technology",
-    headline: "Billing automation built in house, not resold.",
+    eyebrow: "Free with billing",
+    headline: "Free medical billing software for our billing clients.",
     subheadline:
-      "Torix Solutions Medical Billing Software streamlines billing workflows, connects to the systems you already run, and gives you reporting you can actually read. Less manual entry, shorter billing cycles, and visibility into what moved and what didn't.",
+      "When we run your billing, you can use our medical billing software at no extra cost. It shows what was submitted, what was paid and what is still outstanding, so you don't have to wait for a report or call us to find out where a claim stands.",
     distinction:
-      "Available as part of the Medical Billing service, bundled at no cost. Adopting the software is optional if you prefer to keep your current stack.",
-    primaryCta: { label: "Request a Demo", href: "/contact" },
+      "The software is not sold separately. It is free with the Medical Billing service, and using it is optional: we can also work inside the system you already have.",
+    primaryCta: { label: "Book a Free Billing Review", href: "/contact" },
     secondaryCta: {
       label: "See Medical Billing",
-      href: "/services/medical-billing",
+      href: services.medicalBilling.href,
     },
     image: {
       src: "/brand/heroes/billing-software.jpg",
-      alt: "Team reviewing healthcare billing software together on a laptop",
+      alt: "Practice staff reviewing billing reports together on a laptop",
     },
   },
   features: {
     heading: "What the software does",
     subheading:
-      "Four capabilities that reduce manual work and keep billing connected to the rest of the practice.",
+      "Four things that cut manual work and keep you informed about your billing.",
     items: [
       {
         icon: "activity" as IconName,
-        title: "Automated Billing Workflows",
+        title: "Claim Status at a Glance",
         description:
-          "Repeatable billing steps handled in software so staff spend less time on re-keying and chasing the same handoffs.",
+          "See which claims were submitted, paid, denied or are still waiting, without asking anyone for an update.",
       },
       {
         icon: "monitor" as IconName,
-        title: "EHR & Practice Management Integration",
+        title: "Works Alongside Your EHR",
         description:
-          "Connects with the EHR and practice management tools you already use, so billing isn't trapped in a separate island.",
+          "Your clinical system stays as it is. During onboarding we confirm how billing information moves between your EHR and the software.",
       },
       {
         icon: "fileText" as IconName,
-        title: "Billing Reports & Analytics",
+        title: "Readable Reports",
         description:
-          "Reporting on submissions, payments and outstanding work written to be readable, not a dump of unusable exports.",
+          "Reports on submissions, payments and outstanding balances written for practice owners, not raw data exports.",
       },
       {
         icon: "layers" as IconName,
-        title: "Workflow Automation",
+        title: "Clear Next Steps",
         description:
-          "Status and next steps surfaced in the workflow so fewer claims stall because someone lost track of ownership.",
+          "Each open item shows what happens next and who owns it, so fewer claims stall because nobody picked them up.",
       },
     ] satisfies FeatureItem[],
   },
   problems: {
     heading: "Problems it solves",
-    subheading:
-      "The operational friction billing software is meant to remove.",
+    subheading: "The everyday billing friction the software is meant to remove.",
     items: [
       {
         icon: "clipboard" as IconName,
-        title: "Manual Billing Processes",
+        title: "Manual Tracking",
         description:
-          "Re-keying, spreadsheet tracking and portal hopping that slow every claim and invite avoidable errors.",
+          "Spreadsheets, sticky notes and payer portals used to track claims, which slows every claim down and invites mistakes.",
       },
       {
         icon: "layers" as IconName,
-        title: "Disconnected Healthcare Systems",
+        title: "Disconnected Systems",
         description:
-          "Clinical, scheduling and billing tools that don't share a clean path, so staff become the integration layer.",
+          "Scheduling, clinical and billing tools that don't talk to each other, leaving staff to re-type information.",
       },
       {
         icon: "eyeOff" as IconName,
-        title: "Limited Billing Visibility",
+        title: "No Visibility",
         description:
-          "No clear view of what was submitted, what paid and what is still sitting, until someone builds a report by hand.",
+          "No clear view of what was submitted, what was paid and what is still sitting, until someone builds a report by hand.",
       },
     ] satisfies FeatureItem[],
   },
   process: {
-    heading: "How it works",
-    subheading:
-      "Five steps from assessing your current stack through go-live and ongoing support.",
+    heading: "How setup works",
+    subheading: "Five steps from looking at your current setup to going live.",
     steps: [
       {
-        title: "Current System Assessment",
+        title: "Review Your Current Setup",
         description:
-          "We review how you bill today, which systems you run and where automation would remove the most manual work.",
+          "We look at how you bill today, which systems you use and whether the software would save your team time.",
       },
       {
-        title: "Integration Setup",
+        title: "Connect Your Systems",
         description:
-          "Connections configured to your EHR and practice management environment without forcing a rip-and-replace.",
+          "We set up how billing information moves from your EHR or practice management system, without forcing you to replace it.",
       },
       {
-        title: "Platform Configuration",
+        title: "Configure",
         description:
-          "Workflows, users and reporting set up for your specialty, volume and how your team actually works.",
+          "Users, reports and workflows set up for your specialty, volume and how your team works.",
       },
       {
         title: "Training & Go-Live",
         description:
-          "Your staff trained on the workflows they'll use daily, then cut over with support during the first live cycles.",
+          "Your staff are trained on the screens they'll use, then we go live with support during the first billing cycles.",
       },
       {
         title: "Ongoing Support",
         description:
-          "Product support continues after go-live so issues in the workflow can be fixed by the same company that built the software.",
+          "Your named account representative remains your contact for questions about the software, just as for the billing.",
       },
     ] satisfies ProcessStep[],
   },
   benefits: {
     heading: "Benefits",
-    subheading:
-      "What changes when billing runs on automation instead of manual handoffs.",
+    subheading: "What changes when you can see your billing for yourself.",
     items: [
       {
         icon: "check" as IconName,
-        title: "Reduced Manual Work",
+        title: "Less Manual Work",
         description:
-          "Fewer repetitive entry and tracking tasks so billing time goes to exceptions that actually need a person.",
+          "Fewer repetitive entry and tracking tasks, so staff time goes to the exceptions that need a person.",
       },
       {
         icon: "activity" as IconName,
-        title: "Faster Billing Operations",
-        description:
-          "Shorter cycles from charge-ready to submitted, with less waiting on spreadsheet status.",
+        title: "Faster Answers",
+        description: "Check a claim's status yourself instead of waiting for a callback.",
       },
       {
         icon: "monitor" as IconName,
-        title: "Clear Reporting & Insights",
+        title: "Clear Reporting",
         description:
-          "Dashboards and reports that show what moved, what paid and what is outstanding without a side project to interpret them.",
+          "See what moved, what paid and what is outstanding without a side project to interpret it.",
       },
       {
         icon: "layers" as IconName,
-        title: "Connected Healthcare Workflows",
+        title: "No Extra Cost",
         description:
-          "Billing stays linked to the clinical and practice systems you already rely on.",
+          "Included free with the Medical Billing service. There is no separate license fee.",
       },
     ] satisfies BenefitItem[],
   },
   whyUs: {
-    heading: "Why choose our software",
-    subheading:
-      "In-house ownership, compliance and support that matter for billing systems.",
+    heading: "Why use our software",
+    subheading: "Included with billing, protected, and supported by the same team.",
     items: [
       {
-        icon: "code" as IconName,
-        title: "Built & Maintained In-House",
+        icon: "check" as IconName,
+        title: "Free With Billing",
         description:
-          "Software written and maintained by Torix, not a white-labelled third-party product with a logo swap.",
+          "The software comes at no extra cost with the Medical Billing service, and is not sold on its own.",
       },
       {
         icon: "shield" as IconName,
-        title: "HIPAA-Compliant Platform",
+        title: "HIPAA-Compliant Handling",
         description:
-          "Access control, audit logging and a signed BAA before PHI moves through the platform.",
+          "Role-based access, audit logging and a signed BAA before any patient data moves through it.",
       },
       {
         icon: "monitor" as IconName,
-        title: "Flexible EHR & PM System Integration",
+        title: "Keep Your Current System",
         description:
-          "Designed to work with the systems you already run. The billing service is not conditioned on replacing your stack.",
+          "Using the software is optional. The billing service works the same inside the system you already run.",
       },
       {
         icon: "handshake" as IconName,
-        title: "Continuous Product Support",
+        title: "One Point of Contact",
         description:
-          "Ongoing support from the team that builds the product, so workflow issues and product fixes stay in one place.",
+          "Your named account representative handles billing and software questions alike.",
       },
     ] satisfies FeatureItem[],
   },
   faqs: {
-    heading: "Frequently asked questions",
+    heading: "Billing software questions",
     items: [
       {
-        question:
-          "Is the Medical Billing Software included with your billing services?",
+        question: "Is the medical billing software really free?",
         answer:
-          "Yes. It is bundled at no cost with the Medical Billing service. Adopting it is optional: the billing service can also work inside the system you already run.",
+          "Yes, for practices that use our Medical Billing service. It is included at no extra cost and is not sold as a standalone product.",
       },
+      sharedFaqs.software,
       {
-        question:
-          "Does it integrate with my current EHR or Practice Management system?",
+        question: "Does it work with my current EHR or practice management system?",
         answer:
-          "Yes. Integration is part of onboarding. We assess your current stack and configure connections rather than requiring you to rip and replace everything on day one.",
-      },
-      {
-        question: "What reporting and analytics are available?",
-        answer:
-          "Billing reports and analytics cover submissions, payments and outstanding work, written to be readable for practice leadership and the billing team. Exact views are configured during platform setup.",
+          "Your EHR stays in place. During onboarding we review your systems and set up how billing information moves between them, rather than asking you to replace anything.",
       },
       {
         question: "Is patient and billing data secure?",
         answer:
-          "Yes. The platform is operated under HIPAA-compliant controls, including role-based access and audit logging, with a signed Business Associate Agreement before PHI is exchanged.",
+          "Yes. Access is limited by role and logged, data is encrypted, and we sign a Business Associate Agreement before any patient data is shared.",
       },
-      {
-        question: "How long does implementation take?",
-        answer:
-          "Timelines depend on your current systems, integrations and how much configuration your specialty needs. During assessment we set a realistic path through setup, training and go-live.",
-      },
-      {
-        question: "Do you provide ongoing technical support?",
-        answer:
-          "Yes. Continuous product support is part of the offering. Because we build the software in house, support and product changes stay with the same company.",
-      },
+      sharedFaqs.pricing,
     ] satisfies FAQItem[],
   },
   finalCta: {
-    heading: "See the billing software in a demo.",
+    heading: "See the software during your billing review.",
     subheading:
-      "Walk through workflows, reporting and how it sits beside Medical Billing. No obligation to change systems you already like.",
-    cta: { label: "Request a Demo", href: "/contact" },
+      "We'll show you the software during your free billing review. You're under no obligation to change a system you already like.",
+    cta: { label: "Book a Free Billing Review", href: "/contact" },
   },
 };

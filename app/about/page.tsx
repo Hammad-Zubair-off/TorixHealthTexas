@@ -42,10 +42,10 @@ export default function AboutPage() {
           items={c.missionVision.items}
         />
         <IconFeatureGrid
-          heading={c.whyTech.heading}
-          subheading={c.whyTech.subheading}
-          footerNote={c.whyTech.footerNote}
-          items={c.whyTech.items}
+          heading={c.whatWeDo.heading}
+          subheading={c.whatWeDo.subheading}
+          footerNote={c.whatWeDo.footerNote}
+          items={c.whatWeDo.items}
           variant="deep"
           band="deep"
           minCardWidth={220}

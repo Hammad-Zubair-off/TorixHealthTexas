@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/JsonLd";
-import { buildPageMetadata } from "@/lib/site";
-import { faqPageSchema, breadcrumbSchema } from "@/lib/seo-schema";
+import { buildPageMetadata, services } from "@/lib/site";
+import { faqPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo-schema";
 import { BenefitCards } from "@/components/BenefitCards";
 import { CTABanner } from "@/components/CTABanner";
 import { FAQAccordion } from "@/components/FAQAccordion";
@@ -23,7 +23,7 @@ export default function MedicalBillingSoftwarePage() {
 
   return (
     <>
-      <JsonLd data={[faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/solutions/medical-billing-software")]} />
+      <JsonLd data={[serviceSchema({ name: services.billingSoftware.label, description: c.meta.description, path: services.billingSoftware.href }), faqPageSchema(c.faqs.items), breadcrumbSchema(c.hero.breadcrumb, "/solutions/medical-billing-software")]} />
       <Navbar />
       <main>
         <Hero

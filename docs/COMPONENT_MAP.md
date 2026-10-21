@@ -1,6 +1,8 @@
 # Component Map
 
-Structure source of truth for the Torix site. Update this file when adding, renaming, or moving components, content modules, or routes.
+> **Rebranded:** the site is now **Medical Billers** (medicalbillerstexas.com), medical billing only. Section-order notes below that mention Torix or the Healthcare Platform describe the original template; service labels now come from `services` in [`lib/site.ts`](../lib/site.ts) and repeated FAQs from [`content/shared-faqs.ts`](../content/shared-faqs.ts).
+
+Structure source of truth for the site. Update this file when adding, renaming, or moving components, content modules, or routes.
 
 ## Architecture notes
 
@@ -255,11 +257,12 @@ Contact form ([`ContactForm`](../components/ContactForm.tsx)): client Zod valida
 | `/services/medical-audit` | Live |
 | `/services/ar-follow-up` | Live |
 | `/solutions/medical-billing-software` | Live |
-| `/solutions/healthcare-platform` | Live |
 | `/solutions/hipaa-compliant-software` | Live |
 | `/about` | Live |
 | `/careers` | Live |
 | `/contact` | Live |
-| `/resources/blog` | Coming-soon stub; not in nav/footer |
-| `/services/healthcare-seo` | Stub (“Under review”); not in nav; `noindex` |
+| `/privacy`, `/terms` | Drafts pending legal review; `noindex`; linked from footer |
+| `/resources/blog` | Coming-soon stub; not in nav/footer; `noindex` |
+| `/solutions/healthcare-platform` | Retired — 308 to `/solutions/medical-billing-software` (`next.config.ts`) |
+| `/services/healthcare-seo` | Retired — 308 to `/services/medical-billing` (`next.config.ts`) |
 | Unknown paths | [`app/not-found.tsx`](../app/not-found.tsx) |

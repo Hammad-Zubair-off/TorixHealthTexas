@@ -82,13 +82,6 @@ export default function CareersPage() {
           subheading={c.hiring.subheading}
           steps={c.hiring.steps}
         />
-        <IconFeatureGrid
-          heading={c.values.heading}
-          subheading={c.values.subheading}
-          items={c.values.items}
-          band="tint"
-          minCardWidth={200}
-        />
         <CTABanner
           heading={c.finalCta.heading}
           subheading={c.finalCta.subheading}

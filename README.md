@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Medical Billers — www.medicalbillerstexas.com
+
+Marketing site for Medical Billers, a medical billing company serving Texas practices. This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 **Visual source of truth:** [docs/DESIGN_SYSTEM.md](docs/DESIGN_SYSTEM.md) (Nocturne Light — colors, type, spacing, components). Homepage section treatment: [docs/HOMEPAGE_DESIGN_PLAN.md](docs/HOMEPAGE_DESIGN_PLAN.md). Component inventory: [docs/COMPONENT_MAP.md](docs/COMPONENT_MAP.md).
 
